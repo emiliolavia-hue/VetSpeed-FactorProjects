@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetspeed × BigChange: One System for Vetspeed and Medisort</title>
+    <meta name="description" content="A tailored proposal for Vetspeed: mixed hazardous and non-hazardous rounds, rate cards, consumables, weighbridge, incineration and the No-Loss reusable bin system, on one platform.">
+    <meta name="author" content="BigChange">
+    <meta property="og:title" content="Vetspeed &amp; BigChange">
+    <meta property="og:description" content="Two systems holding you back. One you can build on.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Flex:opsz,wght@8..144,500;8..144,700;8..144,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+    <style>
+        :root {
+            --bc-energy-blue: #0072CE;
+            --bc-navy: #0A2240;
+            --bc-green: #28E289;
+            --bc-orange: #FF6B00;
+            --bc-light-grey: #F4F4F4;
+            --bc-charcoal: #282922;
+            --bc-white: #FFFFFF;
+
+            --spacing-1: 0.25rem;
+            --spacing-2: 0.5rem;
+            --spacing-4: 1rem;
+            --spacing-6: 1.5rem;
+            --spacing-8: 2rem;
+            --spacing-12: 3rem;
+            --spacing-16: 4rem;
+
+            --border-radius: 0.85rem;
+            --box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.08);
+            --transition-speed: 0.3s;
+
+            --st-native: #0b7a45;   --st-native-bg: #e9fbf1;
+            --st-config: #0072CE;   --st-config-bg: #eaf4ff;
+            --st-integ: #6d28d9;    --st-integ-bg: #f3edff;
+            --st-road: #b45309;     --st-road-bg: #fff4e5;
+            --st-tbc: #be185d;      --st-tbc-bg: #fdf2f8;
+            --st-out: #6b7280;      --st-out-bg: #f3f4f6;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: var(--bc-white);
+            color: var(--bc-charcoal);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container { max-width: 1150px; margin: 0 auto; padding: 0 var(--spacing-6); }
+        section { padding: var(--spacing-16) 0; }
+        h1, h2, h3, h4 { font-family: 'Roboto Flex', 'Inter', system-ui, sans-serif; color: var(--bc-navy); line-height: 1.15; margin-bottom: var(--spacing-4); }
+        h1 { font-size: 2.9rem; font-weight: 800; letter-spacing: -0.02em; }
+        h2 { font-size: 2.1rem; font-weight: 800; letter-spacing: -0.01em; }
+        h3 { font-size: 1.4rem; font-weight: 700; }
+        a { color: var(--bc-energy-blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        mark.hl-g { background: linear-gradient(180deg, transparent 55%, rgba(40,226,137,0.55) 55%); color: inherit; padding: 0 2px; }
+
+        .section-title { text-align: center; margin-bottom: var(--spacing-12); max-width: 860px; margin-left: auto; margin-right: auto; }
+        .section-title p { font-size: 1.08rem; color: #4b5563; }
+        .eyebrow { display: inline-block; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bc-energy-blue); margin-bottom: var(--spacing-2); }
+        .msi { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased; width: 1em; overflow: hidden; flex-shrink: 0; }
+
+        /* Sticky nav */
+        #sticky-nav { position: sticky; top: 0; z-index: 100; background-color: rgba(10,34,64,0.97); backdrop-filter: blur(8px); box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
+        #sticky-nav .container { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-4); padding-top: 0.7rem; padding-bottom: 0.7rem; }
+        #sticky-nav .nav-brand { display: flex; align-items: center; gap: 0.7rem; }
+        #sticky-nav .nav-brand > img { height: 26px; display: block; }
+        #sticky-nav .nav-links { display: flex; gap: var(--spacing-4); flex-wrap: wrap; align-items: center; }
+        #sticky-nav .nav-links a { color: rgba(255,255,255,0.85); font-size: 0.84rem; font-weight: 600; padding: 0.3rem 0.2rem; border-bottom: 2px solid transparent; transition: all var(--transition-speed); }
+        #sticky-nav .nav-links a:hover { color: var(--bc-green); text-decoration: none; border-bottom-color: var(--bc-green); }
+        #sticky-nav .nav-cta { background-color: var(--bc-green); color: var(--bc-navy) !important; padding: 0.45rem 1rem !important; border-radius: 8px; border-bottom: none !important; font-weight: 700; }
+        #sticky-nav .nav-cta:hover { background-color: #21c476; }
+        #sticky-nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.35); }
+        .nav-vs { background: #fff; border-radius: 6px; padding: 3px 9px; display: inline-flex; align-items: center; }
+        .nav-vs img { height: 22px; display: block; }
+        .nav-vs .wm { font-family: 'Roboto Flex', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--bc-navy); letter-spacing: -0.01em; }
+
+        /* Hero */
+        #hero { background: linear-gradient(150deg, var(--bc-navy) 0%, #0d2f5c 55%, #0a4a8f 100%); color: var(--bc-white); padding: var(--spacing-16) 0; position: relative; overflow: hidden; }
+        #hero::before { content: ''; position: absolute; top: -160px; right: -160px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(40,226,137,0.16) 0%, transparent 70%); pointer-events: none; }
+        #hero::after { content: ''; position: absolute; bottom: -200px; left: -180px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(0,114,206,0.25) 0%, transparent 70%); pointer-events: none; }
+        #hero .container { position: relative; z-index: 1; }
+        #hero h1, #hero p { color: var(--bc-white); }
+        .hero-pill { display: inline-flex; align-items: center; gap: 0.5rem; background-color: rgba(40,226,137,0.12); border: 1px solid rgba(40,226,137,0.5); color: var(--bc-green); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.45rem 1.1rem; border-radius: 9999px; margin-bottom: var(--spacing-6); }
+        .hero-pill .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--bc-green); display: inline-block; animation: pulse-dot 2s infinite; }
+        @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .3; transform: scale(.65); } }
+        .hero-accent { background: linear-gradient(135deg, var(--bc-green), #5ad1ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-logos { display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .logo-chip { background:#fff; border-radius: 10px; padding: 8px 16px; display:inline-flex; align-items:center; min-height: 58px; }
+        .logo-chip img { height: 44px; display:block; }
+        .logo-chip .logo-fallback { font-family:'Roboto Flex',sans-serif; font-weight:800; font-size:1.45rem; color:var(--bc-navy); letter-spacing:-0.02em; }
+        .logo-chip .logo-fallback small { display:block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6b7280; margin-top: 1px; }
+
+        .hero-split { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--spacing-12); align-items: center; }
+        .hero-split > * { min-width: 0; }
+        .hero-split h1 { font-size: 2.75rem; }
+        .hero-split .subhead { font-size: 1.05rem; margin: var(--spacing-4) 0 var(--spacing-8); opacity: 0.92; }
+        .cta-buttons { display: flex; gap: var(--spacing-4); flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 0.8rem 1.8rem; border-radius: var(--border-radius); font-weight: 700; text-decoration: none; transition: all var(--transition-speed); border: 2px solid transparent; cursor: pointer; font-size: 1rem; }
+        .btn-primary { background-color: var(--bc-green); border-color: var(--bc-green); color: var(--bc-navy); }
+        .btn-primary:hover { background-color: #21c476; text-decoration: none; }
+        .btn-secondary { background-color: transparent; color: var(--bc-white); border-color: var(--bc-white); }
+        .btn-secondary:hover { background-color: var(--bc-white); color: var(--bc-navy); text-decoration: none; }
+
+        /* Hero scorecard */
+        .scorecard { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); border-radius: 18px; padding: 1.6rem 1.6rem 1.3rem; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+        .scorecard .sc-head { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.3rem; }
+        .scorecard .sc-head .msi { color: var(--bc-green); font-size: 26px; }
+        .scorecard h3 { color: #fff; margin: 0; font-size: 1.15rem; }
+        .scorecard .sc-sub { font-size: 0.82rem; opacity: 0.75; margin-bottom: 1rem; }
+        .sc-big { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.9rem; }
+        .sc-big .n { font-family: 'Roboto Flex', sans-serif; font-weight: 800; font-size: 3.2rem; line-height: 1; }
+        .sc-big .l { font-size: 0.9rem; opacity: 0.85; line-height: 1.3; }
+        .sc-bar { display: flex; height: 12px; border-radius: 9999px; overflow: hidden; background: rgba(255,255,255,0.1); margin-bottom: 1rem; }
+        .sc-bar span { display: block; height: 100%; transition: width 1s ease; width: 0; }
+        .sc-legend { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem 1rem; }
+        .sc-legend li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.84rem; color: rgba(255,255,255,0.9); }
+        .sc-legend li b { font-family: 'Roboto Flex', sans-serif; font-size: 1.05rem; color: #fff; min-width: 1.4rem; }
+        .sc-legend .dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+        .scorecard .sc-link { display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 1.1rem; font-size: 0.86rem; font-weight: 700; color: var(--bc-green); }
+        .scorecard .sc-link .msi { font-size: 18px; }
+
+        .brief-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-4); margin-top: var(--spacing-12); }
+        #heard .brief-band.light { margin-bottom: var(--spacing-6); }
+        .brief-band.light { margin-top: 0; }
+        .brief-band.light .brief-card { background: #fff; border: 1px solid #e5e7eb; box-shadow: var(--box-shadow); border-top: 4px solid var(--bc-energy-blue); }
+        .brief-band.light .brief-card .msi { color: var(--bc-energy-blue); }
+        .brief-band.light .brief-card .n { color: var(--bc-navy); }
+        .brief-band.light .brief-card p { color: #4b5563; opacity: 1; }
+        .contents { margin-top: var(--spacing-6); display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; background: var(--bc-light-grey); border-radius: 14px; padding: 0.9rem 1.2rem; }
+        .contents .ct-l { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6b7280; }
+        .contents .ct-l .msi { font-size: 18px; color: var(--bc-energy-blue); }
+        .contents ol { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .contents a { display: inline-flex; align-items: center; gap: 0.45rem; background: #fff; border: 1px solid #e5e7eb; border-radius: 9999px; padding: 0.35rem 0.85rem 0.35rem 0.4rem; font-size: 0.84rem; font-weight: 700; color: var(--bc-navy); transition: all .2s; }
+        .contents a b { background: var(--bc-navy); color: var(--bc-green); border-radius: 9999px; font-size: 0.7rem; padding: 0.12rem 0.45rem; }
+        .contents a:hover { border-color: var(--bc-energy-blue); text-decoration: none; }
+        .contents.dark { margin-top: var(--spacing-12); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); }
+        .contents.dark .ct-l { color: rgba(255,255,255,0.7); }
+        .contents.dark .ct-l .msi { color: var(--bc-green); }
+        .contents.dark a { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); color: #fff; }
+        .contents.dark a:hover { border-color: var(--bc-green); }
+        .brief-card { background-color: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--border-radius); padding: var(--spacing-6) var(--spacing-4); text-align: left; }
+        .brief-card .msi { font-size: 30px; color: var(--bc-green); margin-bottom: 0.6rem; display: block; }
+        .brief-card .n { font-family: 'Roboto Flex', sans-serif; font-weight: 800; font-size: 1.7rem; line-height: 1.1; color: var(--bc-white); margin-bottom: 0.2rem; }
+        .brief-card .n small { font-size: 0.9rem; opacity: 0.75; font-weight: 700; }
+        .brief-card p { color: var(--bc-white); font-size: 0.82rem; opacity: 0.88; line-height: 1.45; }
+
+        /* Edge band + stack */
+        .edge-band { display: grid; grid-template-columns: auto 1fr; gap: var(--spacing-6); align-items: center; background: var(--bc-navy); color: var(--bc-white); border-radius: var(--border-radius); padding: var(--spacing-6) var(--spacing-8); box-shadow: var(--box-shadow); border-left: 6px solid var(--bc-green); }
+        .edge-band .edge-icon { width: 62px; height: 62px; border-radius: 16px; background: rgba(40,226,137,0.14); display: flex; align-items: center; justify-content: center; }
+        .edge-band .edge-icon .msi { font-size: 34px; color: var(--bc-green); }
+        .edge-band h3 { color: var(--bc-white); font-size: 1.3rem; margin-bottom: 0.4rem; }
+        .edge-band p { font-size: 0.96rem; opacity: 0.9; margin: 0; }
+        .edge-band p .hl { color: var(--bc-green); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+        .edge-band cite { display: block; font-style: normal; font-size: 0.8rem; color: var(--bc-green); font-weight: 600; margin: -0.2rem 0 0.6rem; }
+        .pressure-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-4); margin-top: var(--spacing-6); }
+        .pressure { background: #fff; border: 1px solid #e5e7eb; border-top: 4px solid var(--bc-orange); border-radius: 12px; padding: 1.1rem 1.2rem; box-shadow: var(--box-shadow); }
+        .pressure .p-k { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #b45309; display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.35rem; }
+        .pressure .p-k .msi { font-size: 17px; }
+        .pressure h4 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+        .pressure p { font-size: 0.86rem; line-height: 1.5; color: #374151; }
+        .pressure ul { list-style: none; }
+        .pressure li { position: relative; padding-left: 1.1rem; font-size: 0.87rem; line-height: 1.45; color: #374151; margin-bottom: 0.35rem; }
+        .pressure li::before { content: ''; position: absolute; left: 0; top: 0.55rem; width: 6px; height: 6px; border-radius: 50%; background: var(--bc-orange); }
+        #heard .pressure-grid { margin-top: var(--spacing-6); }
+        #heard .section-title { margin-bottom: var(--spacing-4); }
+        #connects { background: var(--bc-light-grey); }
+        #connects .imap-node { box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        
+        .stack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-4); margin-top: var(--spacing-6); }
+        .stack-card { background: var(--bc-white); border: 1px solid #e5e7eb; border-radius: 12px; padding: var(--spacing-4); box-shadow: var(--box-shadow); }
+        .stack-card .st-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.6rem; }
+        .stack-card .st-name { font-family: 'Roboto Flex', sans-serif; font-weight: 800; color: var(--bc-navy); font-size: 1.02rem; }
+        .stack-card .st-role { font-size: 0.78rem; color: #6b7280; }
+        .stack-card .st-tag { display: inline-block; font-size: 0.64rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.22rem 0.6rem; border-radius: 9999px; white-space: nowrap; }
+        .stack-card .st-tag.keep { background: #eaf4ff; color: var(--bc-energy-blue); }
+        .stack-card .st-tag.move { background: #e9fbf1; color: #0b7a45; }
+        .stack-card .st-tag.integ { background: var(--st-integ-bg); color: var(--st-integ); }
+        .stack-card .st-tag.out { background: var(--st-out-bg); color: var(--st-out); }
+        .stack-card p { font-size: 0.82rem; margin-top: 0.5rem; line-height: 1.45; }
+        .sub-head { font-family: 'Roboto Flex', sans-serif; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280; margin-top: var(--spacing-8); display: flex; align-items: center; gap: 0.6rem; }
+        .sub-head::after { content: ''; flex: 1; height: 1px; background: #e5e7eb; }
+
+        /* PROOF */
+        #proof { background: var(--bc-light-grey); }
+        .scale-band { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--bc-navy); border-radius: 18px; overflow: hidden; margin-bottom: var(--spacing-8); box-shadow: 0 20px 50px rgba(10,34,64,0.18); }
+        .scale-band > div { padding: 1.4rem 1.3rem; border-right: 1px solid rgba(255,255,255,0.1); }
+        .scale-band > div:last-child { border-right: none; }
+        .scale-band .n { font-family: 'Roboto Flex', sans-serif; font-weight: 800; font-size: 2.1rem; line-height: 1.05; background: linear-gradient(135deg, var(--bc-green), #5ad1ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .scale-band .l { font-size: 0.82rem; color: rgba(255,255,255,0.85); margin-top: 0.35rem; line-height: 1.4; }
+        .scale-band .s { font-size: 0.7rem; color: rgba(255,255,255,0.45); margin-top: 0.3rem; }
+
+        .cs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-6); }
+        .cs-card { background: linear-gradient(150deg, #061a33, var(--bc-navy) 60%, #0a3a70); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(10,34,64,.22); transition: transform .35s, box-shadow .35s; }
+        .cs-card:hover { transform: translateY(-6px); box-shadow: 0 28px 70px rgba(10,34,64,.30); }
+        .cs-thumb { position: relative; height: 190px; overflow: hidden; background: var(--bc-navy); }
+        .cs-thumb.noimg { background: radial-gradient(circle at 80% 20%, rgba(40,226,137,0.35), transparent 55%), linear-gradient(135deg, #0a3a70, var(--bc-energy-blue)); }
+        .cs-thumb.noimg .cs-ghost { position: absolute; right: 18px; top: 14px; font-size: 90px; color: rgba(255,255,255,0.14); width: auto; }
+        .cs-thumb > img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+        .cs-card:hover .cs-thumb > img { transform: scale(1.06); }
+        .cs-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,34,64,0) 30%, rgba(6,20,40,.92) 100%); z-index: 1; }
+        .cs-thumb-overlay { position: absolute; left: 18px; right: 18px; bottom: 16px; z-index: 2; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .cs-logo-chip { background: #fff; border-radius: 9px; padding: 7px 12px; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+        .cs-logo-chip img { max-height: 28px; max-width: 130px; object-fit: contain; display: block; }
+        .cs-logo-chip .cs-logo-fallback { font-family: 'Roboto Flex', sans-serif; font-weight: 800; font-size: 1.02rem; color: var(--bc-navy); }
+        .cs-industry { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--bc-green); }
+        .cs-body { padding: var(--spacing-6); display: flex; flex-direction: column; flex: 1; }
+        .cs-stats { display: flex; margin-bottom: var(--spacing-4); }
+        .cs-stat { flex: 1; text-align: center; padding: 0 6px; border-right: 1px solid rgba(255,255,255,.12); }
+        .cs-stat:last-child { border-right: none; }
+        .cs-stat .n { font-family: 'Roboto Flex', sans-serif; font-weight: 800; font-size: 1.75rem; line-height: 1.05; background: linear-gradient(135deg, var(--bc-green), #5ad1ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .cs-stat .l { font-size: 0.64rem; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 5px; line-height: 1.3; }
+        .cs-why { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #5ad1ff; margin-bottom: 0.4rem; }
+        .cs-quote { font-size: 0.88rem; color: rgba(255,255,255,.82); line-height: 1.6; flex: 1; margin-bottom: var(--spacing-4); }
+        .cs-quote q { color: #fff; font-style: italic; }
+        .cs-who { font-size: 0.8rem; font-weight: 700; color: #fff; padding-top: var(--spacing-4); border-top: 1px solid rgba(255,255,255,.12); margin-bottom: var(--spacing-4); }
+        .cs-who span { display: block; font-weight: 500; color: rgba(255,255,255,.5); font-size: 0.75rem; margin-top: 2px; }
+        .cs-link { font-size: 0.82rem; font-weight: 700; color: var(--bc-green); text-decoration: none; margin-top: auto; display: inline-flex; align-items: center; gap: 5px; }
+        .cs-link:hover { text-decoration: underline; }
+
+        .proof-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-4); margin-top: var(--spacing-6); }
+        .proof-tile { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 1.1rem 1.2rem; box-shadow: var(--box-shadow); display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 0.9rem; align-items: start; }
+        .proof-tile .pt-ic { grid-row: span 4; width: 44px; height: 44px; border-radius: 12px; background: #eaf4ff; display: flex; align-items: center; justify-content: center; }
+        .proof-tile .pt-ic .msi { color: var(--bc-energy-blue); font-size: 24px; }
+        .proof-tile .pt-name { font-family: 'Roboto Flex', sans-serif; font-weight: 800; color: var(--bc-navy); font-size: 0.98rem; line-height: 1.25; }
+        .proof-tile .pt-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #6b7280; }
+        .proof-tile p { font-size: 0.84rem; line-height: 1.45; color: #374151; margin-top: 0.25rem; }
+        .proof-tile p b { color: var(--bc-navy); }
+        .proof-tile .pt-link { grid-column: 2; font-size: 0.8rem; font-weight: 700; margin-top: 0.4rem; display: inline-block; }
+        .yard-note { margin-top: var(--spacing-6); display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: center; background: #f0fdf6; border: 1px solid #b9f3d6; border-radius: var(--border-radius); padding: 1.1rem 1.4rem; }
+        .yard-note .msi { font-size: 30px; color: #0b7a45; }
+        .yard-note p { font-size: 0.95rem; color: var(--bc-navy); }
+        .yard-note p b { font-weight: 800; }
+
+        /* FIT MATRIX */
+        .fit-summary { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--spacing-4); margin-bottom: var(--spacing-6); }
+        .fit-sum { border-radius: 14px; padding: 1rem 1.1rem; border: 1px solid transparent; }
+        .fit-sum .n { font-family: 'Roboto Flex', sans-serif; font-weight: 800; font-size: 2rem; line-height: 1; }
+        .fit-sum .k { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.35rem; }
+        .fit-sum .d { font-size: 0.78rem; color: #4b5563; margin-top: 0.25rem; line-height: 1.35; }
+        .fit-sum.native { background: var(--st-native-bg); border-color: #b9f3d6; color: var(--st-native); }
+        .fit-sum.config { background: var(--st-config-bg); border-color: #cfe5f8; color: var(--st-config); }
+        .fit-sum.integ { background: var(--st-integ-bg); border-color: #ddd0fb; color: var(--st-integ); }
+        .fit-sum.road { background: var(--st-road-bg); border-color: #fbd9b0; color: var(--st-road); }
+        .fit-sum.out { background: var(--st-out-bg); border-color: #e5e7eb; color: var(--st-out); }
+        .fit-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: var(--spacing-4); }
+        .fit-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .fit-chip { font-family: inherit; display: inline-flex; align-items: center; gap: 0.4rem; background: #fff; border: 2px solid #e5e7eb; border-radius: 9999px; padding: 0.4rem 0.95rem; font-weight: 700; font-size: 0.84rem; color: var(--bc-navy); cursor: pointer; transition: all .2s; }
+        .fit-chip .c { font-size: 0.72rem; background: #f3f4f6; border-radius: 9999px; padding: 0.05rem 0.45rem; }
+        .fit-chip:hover { border-color: #9cc9ef; }
+        .fit-chip.active { background: var(--bc-navy); border-color: var(--bc-navy); color: #fff; }
+        .fit-chip.active .c { background: rgba(255,255,255,0.15); }
+        .fit-note { font-size: 0.82rem; color: #6b7280; }
+        .aud-row { display: flex; align-items: center; gap: 1rem 1.4rem; flex-wrap: wrap; background: var(--bc-navy); border-radius: 14px; padding: 0.9rem 1.2rem; margin-bottom: var(--spacing-4); }
+        .aud-l { display: flex; align-items: center; gap: 0.7rem; color: #fff; }
+        .aud-l .msi { color: var(--bc-green); font-size: 26px; }
+        .aud-l b { display: block; font-size: 0.95rem; }
+        .aud-l span:not(.msi) { font-size: 0.8rem; opacity: 0.75; }
+        .aud-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .aud-chip { font-family: inherit; display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 9999px; padding: 0.4rem 0.85rem; font-weight: 700; font-size: 0.82rem; cursor: pointer; transition: all .2s; }
+        .aud-chip .msi { font-size: 17px; color: var(--bc-green); }
+        .aud-chip .c { font-size: 0.7rem; background: rgba(255,255,255,0.12); border-radius: 9999px; padding: 0.05rem 0.45rem; }
+        .aud-chip:hover { border-color: var(--bc-green); }
+        .aud-chip.active { background: var(--bc-green); border-color: var(--bc-green); color: var(--bc-navy); }
+        .aud-chip.active .msi { color: var(--bc-navy); }
+        .aud-chip.active .c { background: rgba(10,34,64,0.12); }
+        .aud-chip:focus-visible { outline: 3px solid var(--bc-green); outline-offset: 2px; }
+        .fit-empty { padding: 1.4rem; text-align: center; color: #6b7280; font-size: 0.9rem; }
+        .fit-table { border: 1px solid #e5e7eb; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow); background: #fff; }
+        .fit-head, .fit-row { display: grid; grid-template-columns: 1.15fr 148px 1.45fr; }
+        .fit-head > div { padding: 0.75rem 1.2rem; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6b7280; background: #f9fafb; border-bottom: 1px solid #e5e7eb; }
+        .fit-area { width: 100%; border: none; border-top: 1px solid rgba(255,255,255,0.08); cursor: pointer; text-align: left; padding: 0.9rem 1.2rem; background: var(--bc-navy); color: #fff; font-family: 'Roboto Flex', sans-serif; font-weight: 800; font-size: 0.98rem; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; transition: background .2s; }
+        .fit-area:hover { background: #0d2f5c; }
+        .fit-area:focus-visible { outline: 3px solid var(--bc-green); outline-offset: -3px; }
+        .fit-area .fa-name { flex: 0 1 auto; }
+        .fit-area .fa-count { font-family: 'Inter', sans-serif; font-size: 0.74rem; font-weight: 600; color: rgba(255,255,255,0.6); }
+        .fit-area .fa-mix { display: flex; align-items: center; margin-left: auto; }
+        .fa-bar { display: flex; width: 190px; height: 10px; border-radius: 9999px; overflow: hidden; background: rgba(255,255,255,0.12); gap: 2px; }
+        .fa-bar i { display: block; height: 100%; }
+        .fit-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center; margin-bottom: 0.8rem; font-size: 0.8rem; color: #4b5563; }
+        .fit-legend .hint { display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 700; color: var(--bc-navy); margin-right: auto; }
+        .fit-legend .hint .msi { color: var(--bc-energy-blue); font-size: 20px; }
+        .fit-legend .k { display: inline-flex; align-items: center; gap: 0.35rem; }
+        .fit-legend .k i { width: 12px; height: 8px; border-radius: 4px; display: inline-block; }
+        @media (max-width: 768px) { .fa-bar { width: 100%; } .fit-area .fa-mix { width: 100%; margin-left: 0; } }
+        .fit-area .mini { font-family: 'Inter', sans-serif; font-size: 0.64rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.18rem 0.5rem; border-radius: 9999px; }
+        .fit-area .mini.native { background: var(--st-native-bg); color: var(--st-native); }
+        .fit-area .mini.config { background: var(--st-config-bg); color: var(--st-config); }
+        .fit-area .mini.integ { background: var(--st-integ-bg); color: var(--st-integ); }
+        .fit-area .mini.road { background: var(--st-road-bg); color: var(--st-road); }
+        .fit-area .mini.tbc { background: var(--st-tbc-bg); color: var(--st-tbc); }
+        .fit-area .mini.out { background: var(--st-out-bg); color: var(--st-out); }
+        .fit-area .fa-chev { color: var(--bc-green); transition: transform .25s; }
+        .fit-area.open .fa-chev { transform: rotate(180deg); }
+        .fit-expand { font-family: inherit; display: inline-flex; align-items: center; gap: 0.35rem; background: none; border: none; color: var(--bc-energy-blue); font-weight: 700; font-size: 0.86rem; cursor: pointer; }
+        .fit-expand .msi { font-size: 19px; }
+        .fit-area .msi { font-size: 19px; color: var(--bc-green); }
+        .fit-row > div { padding: 0.85rem 1.2rem; border-top: 1px solid #eef0f2; font-size: 0.88rem; line-height: 1.5; }
+        .fit-row .f-req { color: var(--bc-navy); font-weight: 700; }
+        .fit-row .f-req .src { display: block; font-weight: 500; font-style: italic; color: #6b7280; font-size: 0.8rem; margin-top: 0.25rem; }
+        .fit-row .f-how { color: #374151; }
+        .fit-row .f-how .caveat { display: block; margin-top: 0.35rem; font-size: 0.8rem; color: #b45309; font-weight: 600; }
+        .fit-rows .fit-row:nth-child(even) > div { background: #fcfcfd; }
+        .st { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 9999px; white-space: nowrap; }
+        .st .msi { font-size: 15px; }
+        .st.native { background: var(--st-native-bg); color: var(--st-native); }
+        .st.config { background: var(--st-config-bg); color: var(--st-config); }
+        .st.integ { background: var(--st-integ-bg); color: var(--st-integ); }
+        .st.road { background: var(--st-road-bg); color: var(--st-road); }
+        .st.out { background: var(--st-out-bg); color: var(--st-out); }
+        .st.tbc { background: var(--st-tbc-bg); color: var(--st-tbc); }
+        .fit-sum.tbc { background: var(--st-tbc-bg); border-color: #fbcfe8; color: var(--st-tbc); }
+        .fit-foot { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-4); margin-top: var(--spacing-6); }
+        .fit-callout { border-radius: 12px; padding: 1rem 1.2rem; display: flex; gap: 0.7rem; align-items: flex-start; font-size: 0.9rem; }
+        .fit-callout .msi { font-size: 22px; flex-shrink: 0; }
+        .fit-callout.api { background: var(--st-integ-bg); color: #3b1a87; border: 1px solid #ddd0fb; }
+        .fit-callout.api .msi { color: var(--st-integ); }
+        .fit-callout.dwt { background: var(--st-road-bg); color: #7c3a06; border: 1px solid #fbd9b0; }
+        .fit-callout.dwt .msi { color: var(--st-road); }
+        .fit-callout b { display: block; margin-bottom: 0.15rem; }
+
+        /* Integration map */
+        .imap { display: grid; grid-template-columns: 1fr 230px 1fr; gap: 1.4rem; align-items: stretch; margin-top: 0.7rem; }
+        .imap-heads { display: grid; grid-template-columns: 1fr 230px 1fr; gap: 1.4rem; }
+        .imap-heads .imap-h:last-child { padding-left: 0.2rem; }
+        .imap-h.m { display: none; }
+        .imap-col { justify-content: space-between; }
+        .imap > * { min-width: 0; }
+        .imap-col { display: flex; flex-direction: column; gap: 0.7rem; }
+        .imap-h { display: flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6b7280; }
+        .imap-h .msi { font-size: 18px; color: var(--bc-energy-blue); }
+        .imap-node { position: relative; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 0.75rem 1rem; box-shadow: var(--box-shadow); }
+        .imap-node::after { content: ''; position: absolute; top: 50%; width: 1.4rem; height: 2px; background: linear-gradient(90deg, #cfe5f8, var(--bc-energy-blue)); }
+        .imap-col:not(.out) .imap-node::after { right: -1.45rem; }
+        .imap-col.out .imap-node::after { left: -1.45rem; background: linear-gradient(90deg, var(--bc-energy-blue), #b9f3d6); }
+        .imap-col.out .imap-node { border-left: 3px solid var(--bc-green); }
+        .imap-col:not(.out) .imap-node { border-right: 3px solid var(--bc-energy-blue); }
+        .in-top { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+        .in-top b { font-family: 'Roboto Flex', sans-serif; color: var(--bc-navy); font-size: 0.98rem; }
+        .in-m { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.18rem 0.55rem; border-radius: 9999px; white-space: nowrap; }
+        .in-m.api { background: var(--st-integ-bg); color: var(--st-integ); }
+        .in-m.file { background: var(--st-integ-bg); color: var(--st-integ); }
+        .in-m.app { background: var(--st-native-bg); color: var(--st-native); }
+        .in-m.imp, .in-m.cfg { background: var(--st-config-bg); color: var(--st-config); }
+        .imap-node p { font-size: 0.82rem; color: #374151; line-height: 1.4; margin: 0.25rem 0 0.35rem; }
+        .in-f { display: inline-flex; align-items: center; gap: 0.25rem; font-size: 0.72rem; font-weight: 700; color: #6b7280; }
+        .in-f .msi { font-size: 14px; color: var(--bc-energy-blue); }
+        .imap-core { display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(160deg, var(--bc-navy), #0d2f5c); border-radius: 22px; padding: 1.4rem 1.1rem; text-align: center; color: #fff; box-shadow: 0 20px 50px rgba(10,34,64,0.25); }
+        .core-ring { width: 104px; height: 104px; margin: 0 auto 0.9rem; border-radius: 50%; background: var(--bc-navy); border: 2px solid rgba(40,226,137,0.5); display: flex; align-items: center; justify-content: center; animation: hub-pulse 2.4s infinite; }
+        .core-ring img { max-width: 76px; }
+        .core-fb { font-family: 'Roboto Flex', sans-serif; font-weight: 800; font-size: 1rem; }
+        .core-list { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; width: 100%; }
+        .core-list li { font-size: 0.8rem; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 0.3rem 0.5rem; }
+        .core-sub { margin-top: 0.8rem; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bc-green); line-height: 1.4; }
+        .retire-strip { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: var(--spacing-6); background: var(--bc-light-grey); border-radius: 12px; padding: 0.9rem 1.2rem; }
+        .rs-group { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+        .rs-l { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #0b7a45; margin-right: 0.3rem; }
+        .rs-l.keep { color: #6b7280; }
+        .rs-l .msi { font-size: 18px; }
+        .rs-chip { background: #fff; border: 1px solid #e5e7eb; border-radius: 9999px; padding: 0.25rem 0.75rem; font-size: 0.8rem; font-weight: 600; color: #6b7280; text-decoration: line-through; text-decoration-color: rgba(220,38,38,0.6); }
+        .rs-group:last-child .rs-chip { text-decoration: none; }
+        @media (max-width: 900px) {
+            .imap { grid-template-columns: 1fr; }
+            .imap-heads { display: none; }
+            .imap-h.m { display: flex; }
+            .imap-node::after { display: none; }
+            .imap-core { order: -1; }
+            .core-list { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+        }
+        /* AI box */
+        .ai-box { display: grid; grid-template-columns: auto 1fr; gap: 1.4rem; margin-top: var(--spacing-12); background: radial-gradient(circle at 90% 10%, rgba(40,226,137,0.16), transparent 45%), linear-gradient(150deg, #061a33, var(--bc-navy) 60%, #0b2d58); color: #fff; border-radius: 18px; padding: var(--spacing-8); box-shadow: 0 20px 50px rgba(10,34,64,0.2); }
+        .ai-box-ic { width: 60px; height: 60px; border-radius: 16px; background: rgba(40,226,137,0.15); display: flex; align-items: center; justify-content: center; }
+        .ai-box-ic .msi { font-size: 32px; color: var(--bc-green); }
+        .ai-box .eyebrow { color: var(--bc-green); }
+        .ai-box h3 { color: #fff; font-size: 1.4rem; margin-bottom: 0.4rem; }
+        .ai-box p { color: rgba(255,255,255,0.85); font-size: 0.95rem; }
+        .ai-box ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 1.6rem; margin: 0.9rem 0; }
+        .ai-box li { position: relative; padding-left: 1.1rem; font-size: 0.88rem; color: rgba(255,255,255,0.88); line-height: 1.45; }
+        .ai-box li::before { content: ''; position: absolute; left: 0; top: 0.55rem; width: 6px; height: 6px; border-radius: 50%; background: var(--bc-green); }
+        .ai-box li b { color: #fff; }
+        .ai-box-foot { display: flex; gap: 0.5rem; align-items: flex-start; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.8rem; font-size: 0.88rem !important; }
+        .ai-box-foot .msi { color: var(--bc-green); font-size: 20px; }
+        @media (max-width: 768px) { .ai-box { grid-template-columns: 1fr; padding: var(--spacing-6); } .ai-box ul { grid-template-columns: 1fr; } }
+
+        /* Closing strip */
+        #talk { padding: var(--spacing-12) 0; background: var(--bc-light-grey); }
+        .talk-card { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--spacing-8); align-items: center; background: #fff; border: 1px solid #e5e7eb; border-left: 6px solid var(--bc-green); border-radius: 18px; padding: var(--spacing-8); box-shadow: var(--box-shadow); }
+        .talk-card > * { min-width: 0; }
+        .talk-copy h3 { font-size: 1.8rem; margin: 0; }
+        .talk-copy p { color: #4b5563; font-size: 0.98rem; }
+        .talk-people { display: flex; flex-direction: column; gap: 0.8rem; }
+        .talk-person { display: flex; align-items: center; gap: 0.9rem; background: var(--bc-light-grey); border-radius: 12px; padding: 0.8rem 1rem; }
+        .talk-person .av { width: 48px; height: 48px; border-radius: 50%; background: var(--bc-navy); color: var(--bc-green); display: flex; align-items: center; justify-content: center; font-family: 'Roboto Flex', sans-serif; font-weight: 800; flex-shrink: 0; }
+        .talk-person b { display: block; color: var(--bc-navy); font-size: 1rem; }
+        .talk-person a { display: flex; align-items: center; gap: 0.35rem; font-size: 0.86rem; font-weight: 600; line-height: 1.6; }
+        .talk-person a .msi { font-size: 16px; }
+        @media (max-width: 768px) { .talk-card { grid-template-columns: 1fr; padding: var(--spacing-6); } }
+
+        /* Map inside the day-in-the-life section */
+        .map-label { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin: var(--spacing-8) 0 var(--spacing-4); font-family: 'Roboto Flex', sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--bc-navy); }
+        .map-label .msi { color: var(--bc-energy-blue); font-size: 22px; }
+        .map-label .ml-note { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; color: #6b7280; margin-left: auto; }
+        .imap-node { transition: opacity .35s, box-shadow .35s, transform .35s, border-color .35s; }
+        .imap.staged .imap-node { opacity: 0.38; }
+        .imap.staged .imap-node.lit { opacity: 1; transform: scale(1.02); box-shadow: 0 10px 28px rgba(40,226,137,0.28); border-color: var(--bc-green); }
+        .imap.staged .imap-col:not(.out) .imap-node.lit { border-right-color: var(--bc-green); }
+
+        /* Journey click-through */
+        #round { background-color: var(--bc-white); }
+        #round .lines-foot { margin-top: var(--spacing-6); }
+        .lp-chip { background: rgba(40,226,137,0.14); border: 1px solid rgba(40,226,137,0.5); color: var(--bc-green); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.35rem 0.8rem; border-radius: 9999px; white-space: nowrap; }
+        .lp-note { margin: 1rem 0 0; background: #f0fdf6; border: 1px solid #b9f3d6; border-radius: 10px; padding: 0.8rem 1.1rem; font-size: 0.9rem; color: var(--bc-navy); font-weight: 600; display: flex; gap: 0.5rem; align-items: flex-start; }
+        .lp-note .msi { font-size: 19px; color: #0b7a45; flex-shrink: 0; margin-top: 1px; }
+        .lines-foot { text-align: center; font-size: 0.85rem; color: #6b7280; margin-top: var(--spacing-4); }
+        .journey { background: var(--bc-white); border: 1px solid #e5e7eb; border-radius: 18px; box-shadow: 0 20px 50px rgba(10,34,64,0.10); overflow: hidden; }
+        .j-banner { position: relative; padding: 1.6rem 2rem; color: #fff; background: var(--bc-navy); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .j-banner h3 { color: #fff; margin: 0; font-size: 1.25rem; }
+        .j-banner p { margin: 0.2rem 0 0; font-size: 0.88rem; opacity: 0.85; }
+        .j-steps { display: grid; grid-template-columns: repeat(7, 1fr); list-style: none; padding: 1.6rem 1.2rem 0.4rem; position: relative; }
+        .j-track { position: absolute; top: calc(1.6rem + 23px); left: calc(1.2rem + 7.14%); right: calc(1.2rem + 7.14%); height: 3px; background: #e5e7eb; border-radius: 3px; }
+        .j-track span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--bc-energy-blue), var(--bc-green)); border-radius: 3px; transition: width .45s ease; }
+        .j-step { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.45rem; background: none; border: none; font-family: inherit; cursor: pointer; padding: 0 0.25rem; }
+        .j-dot { width: 48px; height: 48px; border-radius: 50%; background: #fff; border: 3px solid #d1d5db; display: flex; align-items: center; justify-content: center; transition: all .3s; }
+        .j-dot .msi { font-size: 22px; color: #9ca3af; transition: color .3s; }
+        .j-step .j-lab { font-size: 0.78rem; font-weight: 700; color: #6b7280; line-height: 1.25; }
+        .j-step .j-who { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #9ca3af; }
+        .j-step.done .j-dot { border-color: var(--bc-energy-blue); background: #eaf4ff; }
+        .j-step.done .j-dot .msi { color: var(--bc-energy-blue); }
+        .j-step.active .j-dot { border-color: var(--bc-green); background: var(--bc-navy); transform: scale(1.12); box-shadow: 0 8px 20px rgba(10,34,64,0.25); }
+        .j-step.active .j-dot .msi { color: var(--bc-green); }
+        .j-step.active .j-lab { color: var(--bc-navy); }
+        .j-step:hover .j-dot { border-color: var(--bc-energy-blue); }
+        .j-step:focus-visible { outline: 3px solid var(--bc-green); outline-offset: 4px; border-radius: 10px; }
+        .j-panel { padding: 1.2rem 2rem 1.8rem; }
+        .j-panel-inner { transition: opacity .3s ease; }
+        .j-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid #eef0f2; padding-bottom: 0.9rem; margin-bottom: 1.1rem; }
+        .j-head h3 { margin: 0; font-size: 1.4rem; }
+        .j-head .j-num { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bc-energy-blue); display: block; margin-bottom: 0.15rem; }
+        .j-whochip { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-weight: 800; padding: 0.4rem 0.9rem; border-radius: 9999px; background: #eaf4ff; color: var(--bc-energy-blue); }
+        .j-whochip .msi { font-size: 17px; }
+        .j-whochip.field { background: #e9fbf1; color: #0b7a45; }
+        .j-whochip.plant { background: #fff4e5; color: #b45309; }
+        .j-whochip.sys { background: var(--st-integ-bg); color: var(--st-integ); }
+        .j-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+        .j-col { border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem 1.2rem; }
+        .j-col h4 { display: flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.6rem; color: var(--bc-navy); }
+        .j-col h4 .msi { font-size: 19px; color: var(--bc-energy-blue); }
+        .j-col.field h4 .msi { color: #0b7a45; }
+        .j-col ul { list-style: none; }
+        .j-col li { position: relative; padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.45; margin-bottom: 0.45rem; color: #374151; }
+        .j-col li::before { content: ''; position: absolute; left: 0; top: 0.5rem; width: 7px; height: 7px; border-radius: 50%; background: var(--bc-energy-blue); }
+        .j-col.field li::before { background: var(--bc-green); }
+        .j-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 1.2rem; gap: 1rem; flex-wrap: wrap; }
+        .j-btn { font-family: inherit; display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 700; font-size: 0.9rem; padding: 0.55rem 1.1rem; border-radius: 9999px; border: 2px solid #e5e7eb; background: #fff; color: var(--bc-navy); cursor: pointer; transition: all .25s; }
+        .j-btn:hover:not(:disabled) { border-color: var(--bc-energy-blue); }
+        .j-btn.next { background: var(--bc-navy); border-color: var(--bc-navy); color: #fff; }
+        .j-btn.next .msi { color: var(--bc-green); }
+        .j-btn:disabled { opacity: 0.4; cursor: default; }
+        .j-btn .msi { font-size: 18px; }
+        .j-count { font-size: 0.78rem; color: #9ca3af; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+        /* Feature hub */
+        .features-layout { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: var(--spacing-8); align-items: center; }
+        .features-layout > * { min-width: 0; }
+        #feature-display { background-color: var(--bc-white); border: 1px solid #e5e7eb; border-radius: var(--border-radius); padding: var(--spacing-8); min-height: 320px; display: flex; flex-direction: column; justify-content: center; box-shadow: var(--box-shadow); }
+        #feature-display-content { transition: opacity 0.4s ease-in-out; }
+        #feature-display-content .fd-head { display: flex; align-items: center; gap: var(--spacing-4); margin-bottom: var(--spacing-4); min-width: 0; }
+        #feature-display-content .fd-head .msi { font-size: 40px; color: var(--bc-energy-blue); }
+        #feature-display-content h3 { margin-bottom: 0; font-size: 1.5rem; min-width: 0; overflow-wrap: break-word; }
+        #feature-display-content .fd-desc { font-size: 0.98rem; color: var(--bc-charcoal); }
+        #feature-display-content .fd-you { display: flex; align-items: flex-start; gap: 0.5rem; margin-top: var(--spacing-4); background-color: #f0fdf6; border: 1px solid #b9f3d6; border-radius: 8px; padding: var(--spacing-2) var(--spacing-4); font-size: 0.9rem; color: var(--bc-navy); font-weight: 600; }
+        #feature-display-content .fd-you .msi { font-size: 18px; color: #0b7a45; flex-shrink: 0; margin-top: 2px; }
+        .fd-count { font-size: 0.75rem; color: #9ca3af; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-top: var(--spacing-4); }
+        .platform-hub-container { position: relative; width: 100%; max-width: 640px; aspect-ratio: 1 / 1; margin: auto; }
+        .hub-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110px; height: 110px; background-color: var(--bc-navy); border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; z-index: 10; box-shadow: 0 0 20px rgba(10, 34, 64, 0.5); animation: hub-pulse 2s infinite; text-align: center; padding: 10px; }
+        .hub-center img { max-width: 90px; height: auto; }
+        @keyframes hub-pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 114, 206, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(0, 114, 206, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 114, 206, 0); } }
+        .hub-node { position: absolute; width: 86px; height: 86px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: white; border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; z-index: 5; padding: 8px; border: 3px solid transparent; }
+        .hub-node.active, .hub-node:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 10px 25px rgba(0, 114, 206, 0.3); border-color: var(--bc-energy-blue); z-index: 20; }
+        .hub-node .msi { font-size: 22px; color: var(--bc-energy-blue); }
+        .hub-node.ring-0 { border-color: #9cc9ef; box-shadow: 0 10px 26px rgba(0,114,206,0.22); z-index: 7; }
+        .hub-node.ring-0 .msi { font-size: 25px; }
+        .hub-node.ring-0 .feature-name { font-size: 9px; font-weight: 700; }
+        .hub-node.ring-1 { opacity: 0.72; z-index: 6; }
+        .hub-node.ring-2 { background: #f8fafc; opacity: 0.45; box-shadow: 0 3px 8px rgba(0,0,0,0.06); }
+        .hub-node.ring-2 .feature-name { font-size: 7.5px; }
+        .hub-node.ring-2 .msi { font-size: 19px; }
+        .hub-line.ring-1 { opacity: 0.7; }
+        .hub-line.ring-2 { opacity: 0.4; }
+        .platform-hub-container[data-focus="1"] .hub-node.ring-0, .platform-hub-container[data-focus="2"] .hub-node.ring-0 { opacity: 0.55; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-color: transparent; }
+        .platform-hub-container[data-focus="1"] .hub-node.ring-1 { opacity: 1; border-color: #9cc9ef; box-shadow: 0 10px 26px rgba(0,114,206,0.22); }
+        .platform-hub-container[data-focus="2"] .hub-node.ring-1 { opacity: 0.6; }
+        .platform-hub-container[data-focus="2"] .hub-node.ring-2 { opacity: 1; background: #fff; border-color: #9cc9ef; box-shadow: 0 10px 26px rgba(0,114,206,0.22); }
+        .hub-node:hover, .hub-node.active { opacity: 1 !important; }
+        .ring-btn { font-family: inherit; display: inline-flex; align-items: center; gap: 0.4rem; background: #fff; border: 2px solid #e5e7eb; border-radius: 9999px; padding: 0.35rem 0.85rem; font-size: 0.8rem; font-weight: 700; color: #6b7280; cursor: pointer; transition: all .2s; }
+        .ring-btn:hover { border-color: #9cc9ef; }
+        .ring-btn.active { background: var(--bc-navy); border-color: var(--bc-navy); color: #fff; }
+        .ring-btn:focus-visible { outline: 3px solid var(--bc-green); outline-offset: 2px; }
+        .rb-arrow { color: #9ca3af; font-size: 18px; }
+        .hub-node.ring-2 .msi { color: #5b8fc7; }
+        .hub-line.ring-2 { background-color: #e5e7eb; }
+        .hub-legend { display: flex; justify-content: center; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.8rem; font-size: 0.76rem; color: #6b7280; font-weight: 600; }
+        .hub-legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
+        .hub-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; border: 2px solid var(--bc-energy-blue); background: #fff; }
+        .hub-legend i.l2 { border-color: #9cc9ef; }
+        .hub-legend i.l3 { border-color: #d1d5db; background: #f8fafc; }
+        .hub-node .feature-name { font-size: 8.5px; font-weight: 600; margin-top: 4px; color: var(--bc-navy); line-height: 1.2; }
+        .hub-line { position: absolute; background-color: #d1d5db; height: 2px; transform-origin: left center; z-index: 1; }
+        .feature-tile-grid { display: none; }
+
+        /* Inventory */
+        .inventory { margin-top: var(--spacing-12); border: 1px solid #e5e7eb; border-radius: 18px; background: #fff; box-shadow: var(--box-shadow); overflow: hidden; }
+        .inventory > summary { list-style: none; cursor: pointer; padding: 1.3rem 1.8rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; background: linear-gradient(135deg, var(--bc-navy), #0d2f5c); color: #fff; }
+        .inventory > summary::-webkit-details-marker { display: none; }
+        .inventory > summary h3 { color: #fff; margin: 0; font-size: 1.25rem; }
+        .inventory > summary p { margin: 0.15rem 0 0; font-size: 0.86rem; opacity: 0.8; }
+        .inventory > summary .inv-btn { display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 700; font-size: 0.86rem; color: var(--bc-navy); background: var(--bc-green); padding: 0.5rem 1rem; border-radius: 9999px; white-space: nowrap; }
+        .inventory > summary .inv-btn .msi { font-size: 18px; transition: transform .25s; }
+        .inventory[open] > summary .inv-btn .msi { transform: rotate(180deg); }
+        .inv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-4); padding: 1.6rem 1.8rem 0.6rem; }
+        .inv-card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem 1.1rem; }
+        .inv-card h4 { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; margin-bottom: 0.6rem; }
+        .inv-card h4 .msi { color: var(--bc-energy-blue); font-size: 22px; }
+        .inv-card ul { list-style: none; }
+        .inv-card li { position: relative; padding-left: 1.35rem; font-size: 0.84rem; line-height: 1.45; margin-bottom: 0.32rem; color: #374151; }
+        .inv-card li::before { content: 'check'; font-family: 'Material Symbols Outlined'; position: absolute; left: 0; top: 0; font-size: 16px; color: #0b7a45; }
+        .inv-extras { margin: 1rem 1.8rem 1.6rem; background: var(--bc-light-grey); border-radius: 12px; padding: 1rem 1.2rem; }
+        .inv-extras h4 { font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+        .inv-extras h4 .msi { font-size: 20px; color: var(--bc-orange); }
+        .inv-extras ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .inv-extras li { background: #fff; border: 1px solid #e5e7eb; border-radius: 9999px; padding: 0.3rem 0.85rem; font-size: 0.82rem; font-weight: 600; color: var(--bc-navy); }
+        .inv-extras p { font-size: 0.78rem; color: #6b7280; margin-top: 0.6rem; }
+
+        /* Assurance */
+        #assurance { background: var(--bc-light-grey); }
+        .assure-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-6); }
+        .assure-card { background: #fff; border: 1px solid #e5e7eb; border-radius: var(--border-radius); padding: var(--spacing-6); box-shadow: var(--box-shadow); }
+        .assure-card .ac-head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.3rem; }
+        .assure-card .ac-head .msi { font-size: 30px; color: var(--bc-energy-blue); }
+        .assure-card h3 { font-size: 1.15rem; margin: 0; }
+        .assure-card .ac-q { font-size: 0.82rem; color: #6b7280; font-style: italic; margin-bottom: 0.8rem; }
+        .assure-card ul { list-style: none; }
+        .assure-card li { position: relative; padding-left: 1.3rem; font-size: 0.88rem; line-height: 1.45; margin-bottom: 0.5rem; color: #374151; }
+        .assure-card li::before { content: ''; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: var(--bc-green); }
+        .assure-card li b { color: var(--bc-navy); }
+        .badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.9rem; }
+        .badge { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.74rem; font-weight: 800; padding: 0.3rem 0.7rem; border-radius: 8px; background: var(--bc-navy); color: #fff; }
+        .badge .msi { font-size: 15px; color: var(--bc-green); }
+        .roger { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: center; background: var(--bc-navy); color: #fff; border-radius: 12px; padding: 0.9rem 1.1rem; margin-top: 0.9rem; }
+        .roger .av { width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--bc-green), #5ad1ff); display: flex; align-items: center; justify-content: center; font-family: 'Roboto Flex', sans-serif; font-weight: 800; color: var(--bc-navy); font-size: 1.1rem; }
+        .roger p { font-size: 0.84rem; color: rgba(255,255,255,0.88); margin: 0; }
+        .roger p b { color: #fff; display: block; font-size: 0.95rem; }
+
+        /* Next steps */
+        #next-steps { background-color: var(--bc-navy); color: var(--bc-white); }
+        .next-steps-card { background-color: var(--bc-white); color: var(--bc-charcoal); border-radius: var(--border-radius); padding: var(--spacing-8); max-width: 940px; margin: 0 auto; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border-top: 6px solid var(--bc-energy-blue); }
+        .next-steps-card h3 { color: var(--bc-navy); font-size: 1.8rem; margin-bottom: var(--spacing-4); }
+        .next-steps-card > p.lead { font-size: 1.05rem; margin-bottom: var(--spacing-6); }
+        .step-list { counter-reset: step; list-style: none; margin: 0.5rem 0 0; }
+        .step-list li { position: relative; padding-left: 3rem; margin-bottom: var(--spacing-4); font-size: 1rem; }
+        .step-list li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: -2px; width: 2rem; height: 2rem; border-radius: 50%; background-color: var(--bc-energy-blue); color: var(--bc-white); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
+        .step-list li .when { display: inline-block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0b7a45; background: #e9fbf1; padding: 0.1rem 0.5rem; border-radius: 9999px; margin-left: 0.4rem; vertical-align: middle; }
+        .step-list li span.d { display: block; font-size: 0.9rem; color: #4b5563; margin-top: 0.15rem; }
+        .confirm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4); margin-top: var(--spacing-8); }
+        .confirm-box { background: var(--bc-light-grey); border-radius: 12px; padding: 1.2rem 1.4rem; }
+        .confirm-box h4 { font-size: 1rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.45rem; }
+        .confirm-box h4 .msi { font-size: 20px; color: var(--bc-energy-blue); }
+        .confirm-box ul { list-style: none; }
+        .confirm-box li { position: relative; padding-left: 1.3rem; font-size: 0.9rem; margin-bottom: 0.4rem; }
+        .confirm-box li::before { content: ''; position: absolute; left: 0; top: 0.55rem; width: 8px; height: 8px; border-radius: 50%; background: var(--bc-energy-blue); }
+        .contact-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: var(--spacing-8); padding-top: var(--spacing-6); border-top: 1px solid #e5e7eb; }
+        .contact { display: flex; align-items: center; gap: 0.7rem; flex: 1; min-width: 220px; }
+        .contact .av { width: 44px; height: 44px; border-radius: 50%; background: var(--bc-navy); color: var(--bc-green); display: flex; align-items: center; justify-content: center; font-family: 'Roboto Flex', sans-serif; font-weight: 800; }
+        .contact b { display: block; color: var(--bc-navy); font-size: 0.95rem; }
+        .contact span { font-size: 0.82rem; color: #6b7280; }
+
+        footer { background-color: var(--bc-navy); color: var(--bc-light-grey); padding: var(--spacing-8) 0 var(--spacing-12); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.08); }
+
+        /* Reveal */
+        .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease-out, transform .7s ease-out; }
+        .reveal.visible { opacity: 1; transform: none; }
+        .hub-node:focus-visible, .feature-tile:focus-visible, .fit-chip:focus-visible, .ja-q:focus-visible { outline: 3px solid var(--bc-green); outline-offset: 2px; }
+
+        @media (max-width: 1024px) {
+            .brief-band { grid-template-columns: repeat(2, 1fr); }
+            .pressure-grid { grid-template-columns: 1fr; }
+            .stack-grid { grid-template-columns: repeat(2, 1fr); }
+            .cs-grid { grid-template-columns: 1fr; }
+            .proof-tiles { grid-template-columns: repeat(2, 1fr); }
+            .scale-band { grid-template-columns: repeat(2, 1fr); }
+            .scale-band > div:nth-child(2) { border-right: none; }
+            .scale-band > div:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .fit-summary { grid-template-columns: repeat(3, 1fr); }
+            .j-steps { grid-template-columns: repeat(4, 1fr); row-gap: 1.2rem; }
+            .j-track { display: none; }
+            .inv-grid { grid-template-columns: repeat(2, 1fr); }
+            .agent-grid { grid-template-columns: repeat(2, 1fr); }
+            .ai-intro, .justask { grid-template-columns: 1fr; }
+            .assure-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 960px) {
+            .hero-split { grid-template-columns: 1fr; gap: var(--spacing-8); }
+        }
+        @media (max-width: 900px) {
+            .features-layout { grid-template-columns: 1fr; }
+            .platform-hub-container { display: none; }
+            .feature-tile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: var(--spacing-2); }
+            .feature-tile { background: white; border: 2px solid #e5e7eb; border-radius: 10px; padding: 0.7rem 0.4rem; text-align: center; cursor: pointer; transition: all 0.25s ease; font-family: inherit; }
+            .feature-tile .msi { font-size: 24px; color: var(--bc-energy-blue); }
+            .feature-tile .feature-name { display: block; font-size: 0.68rem; font-weight: 600; color: var(--bc-navy); margin-top: 4px; line-height: 1.2; overflow-wrap: anywhere; }
+            .feature-tile.active { border-color: var(--bc-energy-blue); box-shadow: 0 4px 12px rgba(0,114,206,0.2); }
+            .fit-head { display: none; }
+            .fit-row { grid-template-columns: 1fr; }
+            .fit-row > div { border-top: none; padding: 0.35rem 1.1rem; }
+            .fit-row > div:first-child { border-top: 1px solid #eef0f2; padding-top: 0.9rem; }
+            .fit-row > div:last-child { padding-bottom: 0.9rem; }
+        }
+        @media (max-width: 768px) {
+            .hero-split h1 { font-size: 2.1rem; }
+            h2 { font-size: 1.7rem; }
+            section { padding: var(--spacing-12) 0; }
+            #sticky-nav .nav-links a:not(.nav-cta) { display: none; }
+            .brief-band { grid-template-columns: 1fr; }
+            .edge-band { grid-template-columns: 1fr; padding: var(--spacing-6); }
+            .stack-grid, .proof-tiles, .inv-grid, .agent-grid, .confirm-grid, .fit-foot { grid-template-columns: 1fr; }
+            .fit-summary { grid-template-columns: repeat(2, 1fr); }
+            .j-steps { grid-template-columns: repeat(3, 1fr); padding: 1.2rem 0.8rem 0.2rem; }
+            .j-panel { padding: 1rem 1.2rem 1.4rem; }
+            .j-cols { grid-template-columns: 1fr; }
+            .j-banner { padding: 1.3rem 1.2rem; }
+            .ai-claims { grid-template-columns: 1fr; }
+            #feature-display { padding: var(--spacing-6) var(--spacing-4); }
+            .next-steps-card { padding: var(--spacing-6); }
+            .inventory > summary { flex-direction: column; align-items: flex-start; }
+            .inv-grid { padding: 1.2rem; }
+            .inv-extras { margin: 1rem 1.2rem 1.2rem; }
+        }
+        @media (max-width: 480px) {
+            .scale-band { grid-template-columns: 1fr; }
+            .scale-band > div { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .cooper .chip span { font-size: 0.62rem; padding: 0.22rem 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="sticky-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="https://i.postimg.cc/ydbgqXFm/Big-Change-White.png" alt="BigChange Logo">
+                <span style="color:rgba(255,255,255,0.45); font-weight:700;">+</span>
+                <span class="nav-vs"><img src="https://vetspeed-uk.com/wp-content/uploads/2024/02/Vetspeed-Master.png" alt="Vetspeed Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span class="wm" style="display:none;">Vetspeed</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#heard">What we heard</a>
+                <a href="#proof">Proof</a>
+                <a href="#platform">What&rsquo;s included</a>
+                <a href="#fit" class="nav-cta">Your requirements</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <div class="hero-split">
+                    <div class="hero-copy">
+                        <div class="hero-pill"><span class="live-dot"></span> Prepared for Andy Owens &middot; Factor Projects, for Vetspeed</div>
+                        <h1>Two systems holding you back. <span class="hero-accent">One you can build on.</span></h1>
+                        <p class="subhead">Pergo hasn&rsquo;t delivered on legislation, and Medisort&rsquo;s system can&rsquo;t be kept. BigChange runs <strong>hazardous and non-hazardous collections on the same round</strong>, sells consumables on the same visit, and can connect with your weighbridges, Claris, Oracle and No-Loss. <strong>One platform for Vetspeed and Medisort.</strong></p>
+                        <div class="cta-buttons">
+                            <a href="#fit" class="btn btn-primary">See every requirement, scored</a>
+                            <a href="#proof" class="btn btn-secondary">Who already runs on it</a>
+                        </div>
+                    </div>
+                    <div class="scorecard" aria-label="Requirements fit summary">
+                        <div class="sc-head"><span class="msi">fact_check</span><h3>Your requirements, scored honestly</h3></div>
+                        <div class="sc-sub">Based on our conversations so far.</div>
+                        <div class="sc-big"><span class="n" id="sc-pct">0%</span><span class="l">handled in the platform today,<br>natively or through set-up</span></div>
+                        <div class="sc-bar" id="sc-bar"></div>
+                        <ul class="sc-legend" id="sc-legend"></ul>
+                        <a href="#fit" class="sc-link">Open the full requirements list <span class="msi">arrow_downward</span></a>
+                    </div>
+                </div>
+
+                <nav class="contents dark" aria-label="Contents">
+                    <span class="ct-l"><span class="msi">list</span> On this page</span>
+                    <ol>
+                        <li><a href="#heard"><b>01</b>What we heard</a></li>
+                        <li><a href="#proof"><b>02</b>Who else runs on BigChange</a></li>
+                        <li><a href="#fit"><b>03</b>Your requirements, scored</a></li>
+                        <li><a href="#platform"><b>04</b>Everything BigChange does</a></li>
+                        <li><a href="#talk"><b>05</b>Questions</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <section id="heard">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">What we heard</span>
+                </div>
+
+                <div class="brief-band light">
+                    <div class="brief-card">
+                        <span class="msi">warehouse</span>
+                        <div class="n">7 <small>UK sites</small></div>
+                        <p>Main site in Duxford, with your own incinerators. End-to-end, not brokerage.</p>
+                    </div>
+                    <div class="brief-card">
+                        <span class="msi">local_shipping</span>
+                        <div class="n">~100 <small>drivers</small></div>
+                        <p>On fixed rounds, day and overnight, on Android PDAs.</p>
+                    </div>
+                    <div class="brief-card">
+                        <span class="msi">groups</span>
+                        <div class="n">~40 <small>office users</small></div>
+                        <p>Out of around 190 people, across a &pound;28m business that&rsquo;s growing by acquisition.</p>
+                    </div>
+                    <div class="brief-card">
+                        <span class="msi">pets</span>
+                        <div class="n">2,000+ <small>practices</small></div>
+                        <p>In the IVC group, which owns Vetspeed and is also a customer.</p>
+                    </div>
+                </div>
+
+                <div class="edge-band">
+                    <div class="edge-icon"><span class="msi">gpp_maybe</span></div>
+                    <div>
+                        <h3>&ldquo;I don&rsquo;t want to go too far down the line only to find there&rsquo;s something we should know at the start that vetoes the whole thing.&rdquo;</h3>
+                        <cite>Andy Owens &middot; Factor Projects</cite>
+                        <p>So <a href="#fit" class="hl">every requirement is scored further down</a>, with nothing left for later.</p>
+                    </div>
+                </div>
+
+                <div class="pressure-grid">
+                    <div class="pressure">
+                        <div class="p-k"><span class="msi">trending_down</span> Vetspeed today</div>
+                        <h4>Pergo hasn&rsquo;t delivered</h4>
+                        <ul>
+                            <li>A big investment, live for about <strong>two and a half years</strong></li>
+                            <li>Got your drivers mobile for the first time</li>
+                            <li>Promises since, some <strong>critical to legislation tracking</strong>, not delivered</li>
+                            <li>Confidence in the supplier is falling fast</li>
+                        </ul>
+                    </div>
+                    <div class="pressure">
+                        <div class="p-k"><span class="msi">hourglass_bottom</span> Medisort today</div>
+                        <h4>A clever system that can&rsquo;t stay</h4>
+                        <ul>
+                            <li>Delphi, <strong>not upgraded in 14 years</strong></li>
+                            <li>Built by a one-man operation, now in his early 70s</li>
+                            <li>He knows the No-Loss link best, so it should be specified <strong>while he&rsquo;s available</strong></li>
+                            <li>Pergo there is unlikely, so its replacement will most likely run Vetspeed too</li>
+                        </ul>
+                    </div>
+                    <div class="pressure">
+                        <div class="p-k"><span class="msi">gavel</span> Regulation</div>
+                        <h4>Digital Waste Tracking is live</h4>
+                        <ul>
+                            <li>Since 1 October 2026, permitted receivers in England and Wales <strong>report every load within two working days</strong></li>
+                            <li>Phase 2 for carriers expected in 2027: beta in April, enforcement from October</li>
+                            <li>Your next system has to keep up as the rules arrive</li>
+                        </ul>
+                    </div>
+                    <div class="pressure">
+                        <div class="p-k"><span class="msi">inventory_2</span> Consumables today</div>
+                        <h4>&pound;7m of stock on a system built for collecting</h4>
+                        <ul>
+                            <li>Around <strong>&pound;7m of consumables</strong> held and sold on your rounds</li>
+                            <li>Pergo has no concept of stock or sales orders</li>
+                            <li>So it runs on <strong>&ldquo;negative collections&rdquo;</strong> and bespoke reports</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proof">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Proof from businesses like yours</span>
+                    <h2>Waste operators, multi-site groups and hazardous specialists already run on BigChange</h2>
+                </div>
+
+                <div class="cs-grid">
+                    <div class="cs-card">
+                        <div class="cs-thumb">
+                            <img src="https://cdn.prod.website-files.com/652e90c1583f67a8de233f2d/67da89346ee221284ad61b11_Acumen.jpeg" alt="Acumen Waste Services fleet" onerror="this.onerror=null; this.style.display='none'; this.parentElement.classList.add('noimg');">
+                            <div class="cs-thumb-overlay">
+                                <span class="cs-logo-chip">
+                                    <img src="https://acumenwaste.co.uk/wp-content/uploads/2019/08/Acumen_Waste_logo.png" alt="Acumen Waste Services Logo" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                                    <span class="cs-logo-fallback" style="display:none;">Acumen</span>
+                                </span>
+                                <span class="cs-industry">Waste management &middot; 7 locations</span>
+                            </div>
+                        </div>
+                        <div class="cs-body">
+                            <div class="cs-stats">
+                                <div class="cs-stat"><div class="n">7</div><div class="l">Locations</div></div>
+                                <div class="cs-stat"><div class="n">5</div><div class="l">Systems replaced</div></div>
+                                <div class="cs-stat"><div class="n">1</div><div class="l">Platform</div></div>
+                            </div>
+                            <div class="cs-why">Why it&rsquo;s relevant</div>
+                            <div class="cs-quote">Seven sites, like yours, and a fleet of vans, tankers and roll-on roll-off trucks. Separate waste management, vehicle tracking and CRM systems: BigChange replaced five of them, with <strong>electronic consignment notes</strong> on drivers&rsquo; tablets. <q>We had a multitude of different systems operating in silos.</q></div>
+                            <div class="cs-who">Kris Sutton<span>Finance Director, Acumen</span></div>
+                            <a href="https://www.bigchange.com/success-stories/bigchange-technology-drives-acumen-service-improvements" target="_blank" rel="noopener" class="cs-link">Read the case study &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="cs-card">
+                        <div class="cs-thumb">
+                            <img src="https://cdn.prod.website-files.com/652e90c1583f67a8de233f2d/680007d8c36be2e4b71db501_1200dpi_Rilmac_BigChange_06752%20(1).jpg" alt="Rilmac asbestos removal team" onerror="this.onerror=null; this.style.display='none'; this.parentElement.classList.add('noimg');">
+                            <div class="cs-thumb-overlay">
+                                <span class="cs-logo-chip">
+                                    <img src="https://eem.org.uk/wp-content/uploads/2025/07/Rilmac-Insulation-300x236.png" alt="Rilmac Logo" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                                    <span class="cs-logo-fallback" style="display:none;">Rilmac</span>
+                                </span>
+                                <span class="cs-industry">Hazardous asbestos removal &middot; group</span>
+                            </div>
+                        </div>
+                        <div class="cs-body">
+                            <div class="cs-stats">
+                                <div class="cs-stat"><div class="n">~&pound;30m</div><div class="l">Group turnover</div></div>
+                                <div class="cs-stat"><div class="n">30%</div><div class="l">Less back-office admin</div></div>
+                                <div class="cs-stat"><div class="n">25k</div><div class="l">Sheets of paper saved a year</div></div>
+                            </div>
+                            <div class="cs-why">Why it&rsquo;s relevant</div>
+                            <div class="cs-quote">A regulated, hazardous business your size inside a wider group: 249 staff across four locations. Standalone systems and an Access database replaced. <q>The asbestos removal sector is not traditionally thought of as being at the cutting edge of technology.</q></div>
+                            <div class="cs-who">Michael Woods<span>Managing Director, Rilmac Group</span></div>
+                            <a href="https://www.bigchange.com/success-stories/bigchange-removes-inefficiency-for-rilmac-asbestos-services-division" target="_blank" rel="noopener" class="cs-link">Read the case study &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="cs-card">
+                        <div class="cs-thumb">
+                            <img src="https://cdn.prod.website-files.com/652e90c1583f67a8de233f2d/66fffeeb3d88ada0875dddfc_65aec09a6219eaa0ecc3d5a0_65a0f49e6c4b374b6f592052_serious-waste-management-large.webp" alt="Serious Waste Management" onerror="this.onerror=null; this.style.display='none'; this.parentElement.classList.add('noimg');">
+                            <div class="cs-thumb-overlay">
+                                <span class="cs-logo-chip">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGxqsy956XAxFFcbuIvp8lmn2cywKd37VYRBgoaZTta4ef5fL-hzyeeg0U&amp;s=10" alt="Serious Waste Management Logo" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                                    <span class="cs-logo-fallback" style="display:none;">Serious</span>
+                                </span>
+                                <span class="cs-industry">Waste &amp; tankering &middot; 6 depots</span>
+                            </div>
+                        </div>
+                        <div class="cs-body">
+                            <div class="cs-stats">
+                                <div class="cs-stat"><div class="n">60%+</div><div class="l">Faster invoicing</div></div>
+                                <div class="cs-stat"><div class="n">15k+</div><div class="l">Customers</div></div>
+                                <div class="cs-stat"><div class="n">6</div><div class="l">Depots, 1 system</div></div>
+                            </div>
+                            <div class="cs-why">Why it&rsquo;s relevant</div>
+                            <div class="cs-quote">Transit vans to 32-tonne tankers across six depots. Drivers complete waste transfer notes, vehicle checks and risk assessments on the app. <q>BigChange gives us a single, centralised system that has streamlined every aspect of the business.</q></div>
+                            <div class="cs-who">Jeremy Proctor<span>Managing Director, Serious Waste Management</span></div>
+                            <a href="https://www.bigchange.com/success-stories/bigchange-job-management-system-helps-waste-company-seriously-grow-business" target="_blank" rel="noopener" class="cs-link">Read the case study &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-head">More waste and environmental operators on BigChange</div>
+                <div class="proof-tiles">
+                    <div class="proof-tile">
+                        <div class="pt-ic"><span class="msi">event_repeat</span></div>
+                        <div class="pt-name">Cornwall Waste Care</div>
+                        <div class="pt-tag">Scheduled collection rounds</div>
+                        <p>Route planning went from <b>two hours a day on a spreadsheet</b> to automatic. Admin fell from nearly 1,000 hours a year to under 7.</p>
+                        <a href="https://www.bigchange.com/success-stories/bigchange-supports-meteoric-business-growth-at-cornwall-waste-care" target="_blank" rel="noopener" class="pt-link">Read the case study &rarr;</a>
+                    </div>
+                    <div class="proof-tile">
+                        <div class="pt-ic"><span class="msi">water_drop</span></div>
+                        <div class="pt-name">Quest Waste Management</div>
+                        <div class="pt-tag">Liquid waste &amp; drainage</div>
+                        <p><b>Twice as many jobs</b> with no extra back-office staff, and over 150,000 paper records a year gone.</p>
+                        <a href="https://www.casestudies.com/company/bigchange/case-study/quest-goes-for-growth-after-investing-in-bigchange" target="_blank" rel="noopener" class="pt-link">Read the case study &rarr;</a>
+                    </div>
+                    <div class="proof-tile">
+                        <div class="pt-ic"><span class="msi">savings</span></div>
+                        <div class="pt-name">MW Waste</div>
+                        <div class="pt-tag">Waste &amp; drainage, 24/7</div>
+                        <p>About <b>&pound;50,000 saved a year</b>, plus ISO 9001 and ISO 14001 achieved on the back of its records.</p>
+                        <a href="https://www.casestudies.com/company/bigchange/case-study/bigchange-unplugs-big-savings-for-yorkshires-mw-waste" target="_blank" rel="noopener" class="pt-link">Read the case study &rarr;</a>
+                    </div>
+                    <div class="proof-tile">
+                        <div class="pt-ic"><span class="msi">delete_sweep</span></div>
+                        <div class="pt-name">Clearance &amp; Clean Up</div>
+                        <div class="pt-tag">Waste removal &middot; Yorkshire</div>
+                        <p>Worksheets record the <b>type and amount of waste</b> at every job, with transfer notes held against the customer.</p>
+                        <a href="https://bigchange.com/success-stories/clearance-clean-up-eliminate-rubbish-removals-with-bigchange-tech" target="_blank" rel="noopener" class="pt-link">Read the case study &rarr;</a>
+                    </div>
+                    <div class="proof-tile">
+                        <div class="pt-ic"><span class="msi">hub</span></div>
+                        <div class="pt-name">SYNETIQ</div>
+                        <div class="pt-tag">UK&rsquo;s largest vehicle recycler</div>
+                        <p>16 sites and a string of acquisitions, with BigChange <b>integrated into its own industry system</b>, Frontier.</p>
+                        <a href="https://www.casestudies.com/company/bigchange/case-study/bigchange-brings-real-time-visibility-to-synetiq-transport-operations" target="_blank" rel="noopener" class="pt-link">Read the case study &rarr;</a>
+                    </div>
+                    <div class="proof-tile">
+                        <div class="pt-ic"><span class="msi">precision_manufacturing</span></div>
+                        <div class="pt-name">Mardon Group</div>
+                        <div class="pt-tag">Waste handling equipment &middot; NHS &amp; Veolia clients</div>
+                        <p>About <b>8 days a month saved</b> on service scheduling, and three ISO certifications achieved.</p>
+                        <a href="https://bigchange.com/success-stories/mardon-saves-time-with-bigchange-job-management-system" target="_blank" rel="noopener" class="pt-link">Read the case study &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="yard-note">
+                    <span class="msi">local_shipping</span>
+                    <p><b>Already working with you.</b> Some BigChange customers, Greener Options among them, already bring waste to Vetspeed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fit">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Your requirements, scored</span>
+                    <h2>Everything you asked for, and exactly how we meet it</h2>
+                    <p>Open any area to see each requirement, or filter by status.</p>
+                </div>
+
+                <div class="fit-toolbar">
+                    <div class="fit-filters" id="fit-filters" role="toolbar" aria-label="Filter requirements by status"></div>
+                    <button type="button" class="fit-expand" id="fit-expand"><span class="msi">unfold_more</span><span>Expand all</span></button>
+                </div>
+
+                <div class="fit-legend" id="fit-legend">
+                    <span class="hint"><span class="msi">touch_app</span>Click an area to see the requirements in detail</span>
+                </div>
+
+                <div class="fit-table">
+                    <div id="fit-body"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="platform">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">What&rsquo;s included in BigChange</span>
+                    <h2>The full 360: everything BigChange does, in one platform</h2>
+                    <p>Click any capability to see what it means for Vetspeed. The full inventory is underneath.</p>
+                </div>
+
+                <div class="features-layout">
+                    <div id="feature-display">
+                        <div id="feature-display-content"></div>
+                    </div>
+                    <div>
+                        <div id="platform-hub" class="platform-hub-container">
+                            <div class="hub-center"><img src="https://i.postimg.cc/ydbgqXFm/Big-Change-White.png" alt="BigChange"></div>
+                        </div>
+                        <div class="hub-legend" role="toolbar" aria-label="Choose a ring"><button type="button" class="ring-btn active" data-ring="0" aria-pressed="true"><i></i>Core to your requirements</button><span class="rb-arrow msi">chevron_right</span><button type="button" class="ring-btn" data-ring="1" aria-pressed="false"><i class="l2"></i>Part of your set-up</button><span class="rb-arrow msi">chevron_right</span><button type="button" class="ring-btn" data-ring="2" aria-pressed="false"><i class="l3"></i>Also in the platform</button></div>
+                        <div id="feature-tile-grid" class="feature-tile-grid"></div>
+                    </div>
+                </div>
+
+                <div class="ai-box">
+                    <div class="ai-box-ic"><span class="msi">auto_awesome</span></div>
+                    <div class="ai-box-copy">
+                        <span class="eyebrow">AI-first</span>
+                        <h3>BigChange Lightning: AI built into the platform</h3>
+                        <p>Lightning puts an AI layer, Cooper, across everything above. No new system, no new login.</p>
+                        <ul>
+                            <li><b>JobReady</b> briefs drivers on each site before they arrive</li>
+                            <li><b>JobScribe</b> turns what drivers say or type into clean notes</li>
+                            <li><b>JobBrief</b> writes a visit summary for the customer</li>
+                            <li><b>FieldReady</b> trains staff on your own ways of working</li>
+                            <li><b>JustAsk</b> answers questions about your data in plain English</li>
+                        </ul>
+                        <p class="ai-box-foot"><span class="msi">update</span>New AI agents roll out every month, with a customer service agent, a procurement agent and a workforce assistant next on the roadmap.</p>
+                    </div>
+                </div>
+
+                <details class="inventory">
+                    <summary>
+                        <div>
+                            <h3>The full inventory</h3>
+                            <p>Every module in the core platform, for the group&rsquo;s technical review.</p>
+                        </div>
+                        <span class="inv-btn">Show everything <span class="msi">expand_more</span></span>
+                    </summary>
+                    <div class="inv-grid">
+                        <div class="inv-card">
+                            <h4><span class="msi">calendar_month</span>Scheduling &amp; rounds</h4>
+                            <ul>
+                                <li>Drag-and-drop schedule by driver or vehicle</li>
+                                <li>Recurring routes and recurrence patterns</li>
+                                <li>Group jobs: collections plus final disposal</li>
+                                <li>Job hints for sites due in the next 7 days</li>
+                                <li>Scheduling assistant with miles and cost</li>
+                                <li>Route optimiser and Schedule All</li>
+                                <li>Skill and vehicle constraints</li>
+                                <li>Time windows and site access hours</li>
+                                <li>Overnight and multi-day jobs</li>
+                            </ul>
+                        </div>
+                        <div class="inv-card">
+                            <h4><span class="msi">phone_android</span>Driver app (Android &amp; iOS)</h4>
+                            <ul>
+                                <li>Accept, drive to, start and complete jobs</li>
+                                <li>Worksheets with conditional branching</li>
+                                <li>Barcode and QR scanning</li>
+                                <li>GPS-stamped photos and signatures</li>
+                                <li>Contactless signature by link</li>
+                                <li>Vehicle checks with defect reporting</li>
+                                <li>Stock on the van and on the job</li>
+                                <li>Timesheets, expenses and messages</li>
+                                <li>Works offline, syncs when back in signal</li>
+                            </ul>
+                        </div>
+                        <div class="inv-card">
+                            <h4><span class="msi">recycling</span>Waste compliance</h4>
+                            <ul>
+                                <li>Hazardous Waste Consignment Notes</li>
+                                <li>Waste Transfer Notes, per collection or annual</li>
+                                <li>Single-job and group-job processes</li>
+                                <li>Quarterly Hazardous Waste Consignee Returns</li>
+                                <li>National Operators Waste Returns</li>
+                                <li>Digital COSHH library and risk assessments</li>
+                                <li>Full audit trail on every job</li>
+                            </ul>
+                        </div>
+                        <div class="inv-card">
+                            <h4><span class="msi">contacts</span>CRM, contracts &amp; portal</h4>
+                            <ul>
+                                <li>Parent and child contacts (group &rarr; practice)</li>
+                                <li>Contracts with dated invoicing periods</li>
+                                <li>Customer-specific price lists</li>
+                                <li>Notes, workflows, flags and @mentions</li>
+                                <li>Sales pipeline and quoting</li>
+                                <li>Digital quote acceptance</li>
+                                <li>Customer portal: book, track, download</li>
+                                <li>Credit limits and on-stop accounts</li>
+                            </ul>
+                        </div>
+                        <div class="inv-card">
+                            <h4><span class="msi">receipt_long</span>Finance &amp; billing</h4>
+                            <ul>
+                                <li>Invoices raised from completed jobs</li>
+                                <li>Consolidated and batch invoicing</li>
+                                <li>Aggregated contract invoicing</li>
+                                <li>Credit notes, POs, pro formas, statements</li>
+                                <li>Nominal, VAT and department codes</li>
+                                <li>Card payments and payment links (Stripe)</li>
+                                <li>CSV exports in Sage, Xero, QuickBooks formats</li>
+                            </ul>
+                        </div>
+                        <div class="inv-card">
+                            <h4><span class="msi">inventory_2</span>Stock &amp; consumables</h4>
+                            <ul>
+                                <li>Stock by warehouse, van or site</li>
+                                <li>Stock movements with a full log</li>
+                                <li>Reorder alerts by location</li>
+                                <li>Purchase orders and goods-in</li>
+                                <li>Consignments and serialised equipment</li>
+                                <li>Bulk stock upload</li>
+                            </ul>
+                        </div>
+                        <div class="inv-card">
+                            <h4><span class="msi">directions_car</span>Fleet &amp; safety</h4>
+                            <ul>
+                                <li>Live vehicle tracking and journey history</li>
+                                <li>Geofences and territories</li>
+                                <li>Driver behaviour scoring</li>
+                                <li>MOT, tax, service and insurance alerts</li>
+                                <li>CAN bus, tachograph and PTO data</li>
+                                <li>Fuel and emissions reporting</li>
+                                <li>Private mileage controls</li>
+                            </ul>
+                        </div>
+                        <div class="inv-card">
+                            <h4><span class="msi">monitoring</span>Reporting &amp; BI</h4>
+                            <ul>
+                                <li>Report suite, scheduled and emailed</li>
+                                <li>BI dashboards with drill-down</li>
+                                <li>Job, group job and route profitability</li>
+                                <li>Resource utilisation and time adherence</li>
+                                <li>Export blueprints (CSV / XLSX)</li>
+                                <li>Exports to Excel, PDF, Word, PowerPoint</li>
+                            </ul>
+                        </div>
+                        <div class="inv-card">
+                            <h4><span class="msi">admin_panel_settings</span>Integration &amp; admin</h4>
+                            <ul>
+                                <li>REST API with OAuth credentials and scopes</li>
+                                <li>Outbound webhooks and inbound data feeds</li>
+                                <li>Automations and follow-on jobs</li>
+                                <li>Import Hub for migration from Pergo</li>
+                                <li>Roles, permissions and restrictions</li>
+                                <li>MFA and IP whitelisting</li>
+                                <li>User events log</li>
+                                <li>BigChange Express app for managers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="inv-extras">
+                        <h4><span class="msi">add_circle</span>Optional, priced separately</h4>
+                        <ul>
+                            <li>Single sign-on (Microsoft Entra, Okta, Google)</li>
+                            <li>Higher API tiers</li>
+                            <li>Data as a Service (Snowflake)</li>
+                            <li>Tracking hardware and AI dashcams</li>
+                            <li>Professional services for custom builds</li>
+                        </ul>
+                        <p>Exactly what&rsquo;s in your licence will be set out in the commercial proposal.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="talk">
+            <div class="container">
+                <div class="talk-card">
+                    <div class="talk-copy">
+                        <h3>Questions on any of this?</h3>
+                    </div>
+                    <div class="talk-people">
+                        <div class="talk-person"><div class="av">EL</div><div><b>Emilio Lavia</b><a href="mailto:emilio.lavia@bigchange.com"><span class="msi">mail</span>emilio.lavia@bigchange.com</a><a href="tel:+447460070793"><span class="msi">call</span>07460 070793</a></div></div>
+                        <div class="talk-person"><div class="av">RQ</div><div><b>Roger Quinn</b><a href="mailto:roger.quinn@bigchange.com"><span class="msi">mail</span>roger.quinn@bigchange.com</a></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container" style="text-align: center;">
+                <div style="display:flex; justify-content:center; align-items:center; gap:1.2rem; margin-bottom:1.8rem; flex-wrap:wrap;">
+                    <span class="logo-chip" style="min-height:48px; padding:6px 14px;">
+                        <img src="https://vetspeed-uk.com/wp-content/uploads/2024/02/Vetspeed-Master.png" alt="Vetspeed Logo" style="height:34px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="logo-fallback" style="display:none; font-size:1.15rem;">Vetspeed</span>
+                    </span>
+                    <span style="color:rgba(255,255,255,0.4); font-size:1.3rem; font-weight:bold;">+</span>
+                    <img src="https://i.postimg.cc/ydbgqXFm/Big-Change-White.png" alt="BigChange Logo" style="height:30px;">
+                </div>
+                <p style="opacity: 0.7;">Prepared for Andy Owens of Factor Projects, on behalf of Vetspeed.</p>
+                <p style="opacity: 0.7; margin-top: 1rem;">&copy; 2026 BigChange. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // ===== REQUIREMENTS FIT =====
+            const STATUS = {
+                native: { label: 'Native', icon: 'check_circle', desc: 'Out of the box' },
+                config: { label: 'Configured', icon: 'tune', desc: 'Set up during onboarding, no code' },
+                integ:  { label: 'Integration', icon: 'api', desc: 'Can connect through the API or a file' },
+                road:   { label: 'Roadmap', icon: 'schedule', desc: 'In development or on the roadmap' },
+                tbc:    { label: 'To confirm', icon: 'help', desc: 'Approach to be confirmed by Roger' },
+                out:    { label: 'Out of scope', icon: 'block', desc: 'Staying separate, by your choice' }
+            };
+            const AREAS = [
+                { id: 'rounds', name: 'Collections &amp; rounds', icon: 'route' },
+                { id: 'waste', name: 'Waste codes &amp; compliance', icon: 'gavel' },
+                { id: 'yard', name: 'Yard, weighbridge &amp; incineration', icon: 'local_fire_department' },
+                { id: 'stock', name: 'Consumables &amp; stock', icon: 'inventory_2' },
+                { id: 'billing', name: 'Contracts &amp; billing', icon: 'receipt_long' },
+                { id: 'group', name: 'People, devices &amp; group', icon: 'groups' }
+            ];
+            const REQS = [
+                { a: 'rounds', s: 'native', u: 'ops', r: 'Hazardous and non-hazardous waste on the same van, round and journey', q: '&ldquo;Some systems tend to deal with one or the other, but not both at the same time.&rdquo;', h: 'Each stop records its own waste lines, so hazardous and non-hazardous waste can be collected on the same visit. The waste documentation module produces Hazardous Waste Consignment Notes and Waste Transfer Notes.' },
+                { a: 'rounds', s: 'native', u: 'ops', r: 'Fixed rounds two or three times a week, varying by day (e.g. Bristol Monday and Wednesday, Salisbury Friday)', q: '', h: 'Routes repeat on recurrence patterns and can be set to the same vehicle or driver.' },
+                { a: 'rounds', s: 'config', u: 'ops,fin', r: 'Attend and charge, even when there&rsquo;s nothing to collect', q: '&ldquo;They&rsquo;re contractually obliged to turn up.&rdquo;', h: 'Planned as a &ldquo;nothing to collect&rdquo; job result that closes the visit with its time and GPS record, with the visit charge on the job.' },
+                { a: 'rounds', s: 'native', u: 'ops', r: 'Ad hoc extras added on top of fixed rounds', q: '', h: 'Job hints show other visits due at the same site in the next seven days. The scheduling assistant suggests slots for extras, taking travel time and cost into account.' },
+                { a: 'rounds', s: 'native', u: 'ops', r: 'One-off jobs and unusual waste', q: '&ldquo;It can literally be anything from a goldfish to a hippopotamus turning up.&rdquo;', h: 'Quick jobs can be raised in seconds against any customer, with their own waste lines and charges, alongside the fixed rounds.' },
+                { a: 'rounds', s: 'native', u: 'ops', r: 'Room to move to dynamic routing later', q: '', h: 'The route optimiser and Schedule All are there whenever you want them.' },
+                { a: 'rounds', s: 'tbc', u: 'ops', r: 'Loads brought in by third-party carriers (about 1%)', q: '', h: 'We need to confirm how these loads and their paperwork are recorded and reported.' },
+
+                { a: 'waste', s: 'config', u: 'ops', r: 'EWC and hazardous waste codes on some lines and not others, across around 100 waste lines', q: '', h: 'Each waste line (container type plus contents) is set up once with its codes and price, so the right codes appear on the right notes.' },
+                { a: 'waste', s: 'native', u: 'ops', r: 'Hazardous waste consignee returns and operator returns', q: '', h: 'Quarterly Hazardous Waste Consignee Returns and National Operators Waste Returns come as standard reports.' },
+                { a: 'waste', s: 'native', u: 'ops,ivc', r: 'Full chain of custody and audit trail', q: '', h: 'Every event on every job is timestamped, with GPS-stamped photos, signatures and a user events log.' },
+                { a: 'waste', s: 'config', u: 'ops,ivc', r: 'Digital Waste Tracking, phase 1: receipt reporting (mandatory from 1 October 2026)', q: '&ldquo;Phase 1 is mandatory from yesterday, isn&rsquo;t it?&rdquo;', h: 'Set up during onboarding. The receiver data Defra needs is captured on each load as it comes in, ready for reporting within the two-working-day window.' },
+                { a: 'waste', s: 'road', u: 'ops,ivc', r: 'Digital Waste Tracking, phase 2: carriers (beta expected April 2027, enforcement from October)', q: '&ldquo;So we just need to know that when it&rsquo;s available, it&rsquo;s available.&rdquo;', h: 'On the roadmap. Roger has flagged a gap in carrier-side reporting that&rsquo;s being worked on, and he&rsquo;ll take you through the plan and timings.' },
+
+                { a: 'yard', s: 'integ', u: 'ops,fin', r: 'Weighbridge integration: gross and tare weights on arrival', q: '', h: 'The weighbridge can post each weight into BigChange through the REST API or an inbound data feed, matched to the vehicle&rsquo;s load.', c: 'Depends on the weighbridge software at each site.' },
+                { a: 'yard', s: 'config', u: 'ops', r: 'Banksman split of each load by waste stream, container and weight', q: '', h: 'A worksheet on the receipt job records the weight for each stream and container.' },
+                { a: 'yard', s: 'config', u: 'ops', r: 'Incinerator tracking: machine, chamber, weights and pass-throughs', q: '', h: 'The final disposal job in each group job records the machine and chamber, and links back to every collection in the load.' },
+                { a: 'yard', s: 'integ', u: 'ops,medisort,fin', r: 'The No-Loss reusable bin system: bin ID, customer, weight, chamber and cycle count (up to 7 uses)', q: '&ldquo;We need to replicate via the REST API the front end of this No-Loss system.&rdquo;', h: 'No-Loss can post each transaction into BigChange through the REST API. Linking each bin back to the collection it came from can be tested in further proof-of-concepts.', c: 'To be proven.' },
+                { a: 'yard', s: 'native', u: 'ops,medisort', r: 'Bin QR codes scanned by the driver at pick-up', q: '', h: 'Barcode and QR questions are standard in driver worksheets, so each bin is logged against the practice it came from.' },
+
+                { a: 'stock', s: 'config', u: 'ops,fin', r: 'Consumables sold on the same visit: deliver empties, collect fulls', q: '&ldquo;Pergo&rsquo;s all about collecting, not sending.&rdquo;', h: 'One job carries the delivery, the collection and both charges. No more &ldquo;negative collections&rdquo; or workaround reports.' },
+                { a: 'stock', s: 'tbc', u: 'ops', r: 'Orders allocated to the customer&rsquo;s next round', q: '', h: 'BigChange will confirm the best way to put each order onto the practice&rsquo;s next scheduled visit.' },
+                { a: 'stock', s: 'integ', u: 'fin,ops', r: 'A daily consolidated pick by van cage, sent to the Claris WMS', q: '', h: 'A scheduled export or an API pull can give Claris the pick for each round, so each cage can be matched to a van.', c: 'File format to agree with the 3PL.' },
+
+                { a: 'billing', s: 'config', u: 'fin', r: 'Contract rate cards, with next year&rsquo;s queued to switch on 1 January', q: '&ldquo;On the 1st of January that switches in to replace this year&rsquo;s.&rdquo;', h: 'Contracts hold dated invoicing periods and customer price lists. A new period automatically ends the previous one.', c: 'To be checked against a 1 January switchover.' },
+                { a: 'billing', s: 'native', u: 'fin,ivc', r: 'IVC as owner and customer: 2,000+ practices under one parent', q: '', h: 'Parent and child contacts with inherited payment terms, consolidated invoicing and a customer portal for practices. New practices can be bulk-imported as IVC acquires them.', c: 'Consolidated invoicing handles up to 25 child contacts per run, so the setup for 2,000+ practices needs scoping.' },
+                { a: 'billing', s: 'integ', u: 'fin', r: 'A daily nominal posting to IVC&rsquo;s Oracle', q: '&ldquo;Just a daily CSV file it kicks out.&rdquo;', h: 'A scheduled export with the columns you choose, or a pull from the REST API.', c: 'To be matched against a sample of today&rsquo;s file.' },
+
+                { a: 'group', s: 'native', u: 'ops,fin', r: 'Around 100 drivers on Android PDAs', q: '', h: 'The BigChange app runs on all supported Android versions, so current devices should carry over, subject to a model check.' },
+                { a: 'group', s: 'native', u: 'fin', r: 'Around 40 office users across seven sites', q: '', h: 'Web access with roles, permissions and restrictions by site or team. Logins can be limited to whitelisted IP addresses.' },
+                { a: 'group', s: 'config', u: 'medisort,ivc', r: 'Vetspeed and Medisort on one system', q: '&ldquo;It doesn&rsquo;t make sense to put two different systems in.&rdquo;', h: 'Separate groups, departments, templates and branding for each company, with group-wide reporting on top. Future acquisitions can join the same way.' },
+                { a: 'group', s: 'native', u: 'ivc,fin', r: 'IVC technical and commercial approval', q: '', h: 'ISO 27001, ISO 9001, SOC 2 Type 1 and Cyber Essentials, with MFA, IP whitelisting and single sign-on (a paid extra).' },
+                { a: 'group', s: 'config', u: 'fin,medisort', r: 'Moving data off Pergo and the Medisort system', q: '', h: 'Import Hub templates bring across customers, sites, contracts, price lists, stock, vehicles and open jobs, so the set-up work done in Pergo isn&rsquo;t lost.', c: 'Field mapping to be agreed against each system&rsquo;s export.' },
+                { a: 'group', s: 'out', u: 'ops', r: 'Individual pet cremations: chamber numbers, ashes and custody', q: '', h: 'Likely to stay on a specialist system, as things stand. It can be linked through the API later if that helps.' }
+            ];
+
+            const counts = { native: 0, config: 0, integ: 0, road: 0, tbc: 0, out: 0 };
+            REQS.forEach(r => counts[r.s]++);
+            const inScope = REQS.length - counts.out;
+            const COLORS = { native: '#28E289', config: '#5ad1ff', integ: '#b794f6', road: '#FF9A3D', tbc: '#f472b6', out: '#9ca3af' };
+
+            // Hero scorecard
+            const pctEl = document.getElementById('sc-pct');
+            const barEl = document.getElementById('sc-bar');
+            const legEl = document.getElementById('sc-legend');
+            if (pctEl && barEl && legEl) {
+                const pct = Math.round((counts.native + counts.config) / inScope * 100);
+                ['native', 'config', 'integ', 'road', 'tbc'].forEach(k => {
+                    const s = document.createElement('span');
+                    s.style.background = COLORS[k];
+                    s.dataset.w = (counts[k] / inScope * 100) + '%';
+                    barEl.appendChild(s);
+                    const li = document.createElement('li');
+                    li.innerHTML = '<span class="dot" style="background:' + COLORS[k] + '"></span><b>' + counts[k] + '</b>' + STATUS[k].label;
+                    legEl.appendChild(li);
+                });
+                let n = 0;
+                const tick = () => { n = Math.min(pct, n + 2); pctEl.textContent = n + '%'; if (n < pct) requestAnimationFrame(tick); };
+                setTimeout(() => {
+                    barEl.querySelectorAll('span').forEach(s => { s.style.width = s.dataset.w; });
+                    tick();
+                }, 350);
+            }
+
+            // Summary tiles
+            const sumEl = document.getElementById('fit-summary');
+            if (sumEl) {
+                Object.keys(STATUS).forEach(k => {
+                    const d = document.createElement('div');
+                    d.className = 'fit-sum ' + k;
+                    d.innerHTML = '<div class="n">' + counts[k] + '</div><div class="k">' + STATUS[k].label + '</div><div class="d">' + STATUS[k].desc + '</div>';
+                    sumEl.appendChild(d);
+                });
+            }
+
+            // Filters + table
+            const body = document.getElementById('fit-body');
+            const filt = document.getElementById('fit-filters');
+            let active = 'all';
+            let aud = 'all';
+            const audWrap = document.getElementById('aud-filters');
+            const AUDS = [['all', 'Everyone', 'groups'], ['ops', 'Vetspeed operations', 'local_shipping'], ['medisort', 'Medisort', 'recycling'], ['fin', 'Finance &amp; IT', 'account_balance'], ['ivc', 'IVC group', 'domain']];
+            if (audWrap) {
+                AUDS.forEach(([k, lab, ic]) => {
+                    const b = document.createElement('button');
+                    b.type = 'button';
+                    b.className = 'aud-chip' + (k === 'all' ? ' active' : '');
+                    const n = k === 'all' ? REQS.length : REQS.filter(r => r.u.split(',').includes(k)).length;
+                    b.innerHTML = '<span class="msi">' + ic + '</span>' + lab + ' <span class="c">' + n + '</span>';
+                    b.setAttribute('aria-pressed', k === 'all' ? 'true' : 'false');
+                    b.addEventListener('click', () => {
+                        aud = k;
+                        audWrap.querySelectorAll('.aud-chip').forEach(x => { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); });
+                        b.classList.add('active');
+                        b.setAttribute('aria-pressed', 'true');
+                        renderFit();
+                    });
+                    audWrap.appendChild(b);
+                });
+            }
+            const openAreas = new Set();
+            const expandBtn = document.getElementById('fit-expand');
+            const syncExpand = () => {
+                if (!expandBtn) return;
+                const all = openAreas.size === AREAS.length;
+                expandBtn.innerHTML = '<span class="msi">' + (all ? 'unfold_less' : 'unfold_more') + '</span><span>' + (all ? 'Collapse all' : 'Expand all') + '</span>';
+            };
+            const legend = document.getElementById('fit-legend');
+            if (legend) {
+                Object.keys(STATUS).forEach(k => {
+                    const sp = document.createElement('span');
+                    sp.className = 'k';
+                    sp.innerHTML = '<i style="background:' + COLORS[k] + '"></i>' + STATUS[k].label;
+                    legend.appendChild(sp);
+                });
+            }
+            const renderFit = () => {
+                if (!body) return;
+                let html = '';
+                AREAS.forEach(area => {
+                    const rows = REQS.filter(r => r.a === area.id && (active === 'all' || r.s === active) && (aud === 'all' || r.u.split(',').includes(aud)));
+                    if (!rows.length) return;
+                    const open = openAreas.has(area.id);
+                    const mix = {};
+                    rows.forEach(r => { mix[r.s] = (mix[r.s] || 0) + 1; });
+                    const order = Object.keys(STATUS).filter(k => mix[k]);
+                    const label = order.map(k => mix[k] + ' ' + STATUS[k].label.toLowerCase()).join(', ');
+                    const pills = '<span class="fa-bar" role="img" aria-label="' + label + '" title="' + label + '">' + order.map(k => '<i style="width:' + (mix[k] / rows.length * 100) + '%;background:' + COLORS[k] + '"></i>').join('') + '</span>';
+                    html += '<button type="button" class="fit-area' + (open ? ' open' : '') + '" data-area="' + area.id + '" aria-expanded="' + open + '">' +
+                        '<span class="msi">' + area.icon + '</span><span class="fa-name">' + area.name + '</span>' +
+                        '<span class="fa-count">' + rows.length + ' requirement' + (rows.length > 1 ? 's' : '') + '</span>' +
+                        '<span class="fa-mix">' + pills + '</span><span class="msi fa-chev">expand_more</span></button>';
+                    html += '<div class="fit-rows"' + (open ? '' : ' hidden') + '><div class="fit-head"><div>What Vetspeed needs</div><div>Status</div><div>How BigChange handles it</div></div>';
+                    rows.forEach(r => {
+                        const st = STATUS[r.s];
+                        html += '<div class="fit-row">' +
+                            '<div class="f-req">' + r.r + (r.q ? '<span class="src">' + r.q + '</span>' : '') + '</div>' +
+                            '<div class="f-st"><span class="st ' + r.s + '"><span class="msi">' + st.icon + '</span>' + st.label + '</span></div>' +
+                            '<div class="f-how">' + r.h + (r.c ? '<span class="caveat">' + r.c + '</span>' : '') + '</div>' +
+                        '</div>';
+                    });
+                    html += '</div>';
+                });
+                body.innerHTML = html || '<div class="fit-empty">Nothing matches this filter.</div>';
+                body.querySelectorAll('.fit-area').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.dataset.area;
+                        if (openAreas.has(id)) openAreas.delete(id); else openAreas.add(id);
+                        renderFit();
+                    });
+                });
+                syncExpand();
+            };
+            if (expandBtn) {
+                expandBtn.addEventListener('click', () => {
+                    if (openAreas.size === AREAS.length) openAreas.clear(); else AREAS.forEach(a => openAreas.add(a.id));
+                    renderFit();
+                });
+            }
+            if (filt) {
+                const opts = [['all', 'All', REQS.length]].concat(Object.keys(STATUS).map(k => [k, STATUS[k].label, counts[k]]));
+                opts.forEach(([k, lab, c]) => {
+                    const b = document.createElement('button');
+                    b.type = 'button';
+                    b.className = 'fit-chip' + (k === 'all' ? ' active' : '');
+                    b.innerHTML = lab + ' <span class="c">' + c + '</span>';
+                    b.setAttribute('aria-pressed', k === 'all' ? 'true' : 'false');
+                    b.addEventListener('click', () => {
+                        active = k;
+                        filt.querySelectorAll('.fit-chip').forEach(x => { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); });
+                        b.classList.add('active');
+                        b.setAttribute('aria-pressed', 'true');
+                        openAreas.clear();
+                        if (k !== 'all') AREAS.forEach(a => openAreas.add(a.id));
+                        renderFit();
+                    });
+                    filt.appendChild(b);
+                });
+            }
+            renderFit();
+
+            // ===== ROUND CLICK-THROUGH =====
+            const stages = [
+                { icon: 'description', lab: 'Contract &amp; rate card', sys: ['migr'], who: 'Office', whoType: 'office', whoText: 'Your office',
+                  title: 'The contract and rate card are already set',
+                  office: ['Each practice sits under its group parent, with its own 12-month rate card.', 'Next year&rsquo;s rate card can be loaded ahead with a start date, ready for 1 January.', 'For example, the practice sits on the Bristol Monday and Wednesday rounds.'],
+                  field: ['Recurring routes build the round automatically, week after week.', 'Visits happen whether or not there&rsquo;s anything to collect, as the contract says.'],
+                  fieldTitle: 'What&rsquo;s set up once',
+                  note: 'Set up once during onboarding, then reused round after round.' },
+                { icon: 'inventory', lab: 'Orders &amp; pick', sys: ['claris'], who: 'Warehouse', whoType: 'sys', whoText: 'Warehouse / Claris',
+                  title: 'Last week&rsquo;s order goes out on Monday&rsquo;s van',
+                  office: ['The practice orders sharps bins, and the order is lined up for its next scheduled visit.', 'The pick for each van can be exported for the warehouse, by registration.'],
+                  field: ['Once the 3PL is live, Claris picks from that file on its own handhelds.', 'Each cage is labelled with the van&rsquo;s registration, ready in the yard.'],
+                  fieldTitle: 'At the warehouse',
+                  note: 'The aim: sales and collections on one job, without negative collections.' },
+                { icon: 'fact_check', lab: 'Round starts', sys: ['pda'], who: 'Driver', whoType: 'field', whoText: 'Driver',
+                  title: 'Vehicle check, cage on, away',
+                  office: ['Defects show in the office straight away, with photos.', 'The live map shows every van on the round and when it&rsquo;s due at each practice.'],
+                  field: ['A walk-round check on the Android PDA before the first job.', 'The driver collects the cage with his registration on it.', 'Site notes on the PDA cover access, contacts and anything flagged on the last visit.'],
+                  note: 'The round is in order on the PDA, with everything the driver needs.' },
+                { icon: 'pets', lab: 'At the practice', sys: ['pda', 'portal'], who: 'Driver', whoType: 'field', whoText: 'Driver',
+                  title: 'Deliver empties, scan and collect fulls',
+                  office: ['Arrival is logged by geofence, with no tap needed.', 'If there&rsquo;s nothing to collect, the visit still closes with its charge and proof of attendance.'],
+                  field: ['Hands over the ordered consumables, which are charged on the same job.', 'Scans each full bin&rsquo;s QR code, then records hazardous and non-hazardous lines with their codes.', 'Takes a signature. The consignment note and transfer note are produced on the spot.'],
+                  note: 'Mixed hazardous and non-hazardous, on the same visit, on the same round.' },
+                { icon: 'scale', lab: 'Weighbridge', sys: ['wb'], who: 'Yard', whoType: 'plant', whoText: 'Yard &amp; Banksman',
+                  title: 'Back to the yard and over the weighbridge',
+                  office: ['With the weighbridge integrated, gross and tare weights land on the load.', 'The load is linked to every collection on the round.'],
+                  field: ['The Banksman worksheet splits the load by waste stream and container.', 'Weights per stream are recorded on the receipt job for returns and reporting.'],
+                  fieldTitle: 'In the yard',
+                  note: 'One weight, split by stream, recorded once.' },
+                { icon: 'local_fire_department', lab: 'No-Loss &amp; incinerator', sys: ['noloss'], who: 'Plant', whoType: 'plant', whoText: 'Plant',
+                  title: 'Into the right chamber, bins back into use',
+                  office: ['In the proposed integration, No-Loss posts each bin&rsquo;s number, customer, weight and chamber.', 'The QR scan at pick-up is the link back to the practice. The proof of concept will test it.'],
+                  field: ['The disposal job records the machine and chamber for the load.', 'No-Loss keeps tracking each bin&rsquo;s life cycle, as it does today.'],
+                  fieldTitle: 'At the plant',
+                  note: 'Traceable from the practice&rsquo;s bin to the incinerator chamber.' },
+                { icon: 'account_balance', lab: 'Billing &amp; returns', sys: ['oracle', 'defra', 'portal'], who: 'Finance', whoType: 'office', whoText: 'Finance',
+                  title: 'Invoiced, posted to Oracle, reported',
+                  office: ['Invoices are raised from the completed jobs at the right rate card.', 'IVC practices can be billed together under the parent.', 'The daily nominal file goes to Oracle as a scheduled export.'],
+                  field: ['Quarterly hazardous waste returns built from real job data.', 'Receiver data for Digital Waste Tracking captured as each load comes in.', 'Dashboards show volumes and margins by site, round and customer.'],
+                  fieldTitle: 'Compliance &amp; insight',
+                  note: 'From rate card to ledger and regulator, in one system.' }
+            ];
+            const stepsWrap = document.getElementById('j-steps');
+            const panel = document.getElementById('j-panel');
+            const fill = document.getElementById('j-track-fill');
+            const prevBtn = document.getElementById('j-prev');
+            const nextBtn = document.getElementById('j-next');
+            const countEl = document.getElementById('j-count');
+            if (stepsWrap && panel) {
+                let cur = 0;
+                const whoIcon = { office: 'support_agent', field: 'local_shipping', plant: 'factory', sys: 'warehouse' };
+                const list = (arr) => '<ul>' + arr.map(x => '<li>' + x + '</li>').join('') + '</ul>';
+                const render = () => {
+                    const s = stages[cur];
+                    panel.style.opacity = 0;
+                    setTimeout(() => {
+                        panel.innerHTML =
+                            '<div class="j-head"><div><span class="j-num">Stage ' + (cur + 1) + ' of ' + stages.length + '</span><h3>' + s.title + '</h3></div>' +
+                            '<span class="j-whochip ' + s.whoType + '"><span class="msi">' + whoIcon[s.whoType] + '</span>' + s.whoText + '</span></div>' +
+                            '<div class="j-cols">' +
+                                '<div class="j-col"><h4><span class="msi">desktop_windows</span>What your office sees</h4>' + list(s.office) + '</div>' +
+                                '<div class="j-col field"><h4><span class="msi">' + (s.fieldTitle ? 'insights' : 'smartphone') + '</span>' + (s.fieldTitle || 'On the driver&rsquo;s PDA') + '</h4>' + list(s.field) + '</div>' +
+                            '</div>' +
+                            '<div class="lp-note"><span class="msi">check_circle</span><span>' + s.note + '</span></div>';
+                        panel.style.opacity = 1;
+                    }, 150);
+                    stepsWrap.querySelectorAll('.j-step').forEach((b, i) => {
+                        b.classList.toggle('active', i === cur);
+                        b.classList.toggle('done', i < cur);
+                        b.setAttribute('aria-selected', i === cur ? 'true' : 'false');
+                    });
+                    if (fill) fill.style.width = (cur / (stages.length - 1) * 100) + '%';
+                    prevBtn.disabled = cur === 0;
+                    nextBtn.disabled = cur === stages.length - 1;
+                    countEl.textContent = (cur + 1) + ' / ' + stages.length;
+                    const imapEl = document.querySelector('#round .imap');
+                    if (imapEl) {
+                        imapEl.classList.add('staged');
+                        imapEl.querySelectorAll('.imap-node[data-sys]').forEach(n => n.classList.toggle('lit', (s.sys || []).includes(n.dataset.sys)));
+                    }
+                    const ms = document.getElementById('map-stage');
+                    if (ms) ms.innerHTML = 'Stage ' + (cur + 1) + ': ' + s.lab + ' &middot; systems involved';
+                };
+                stages.forEach((s, i) => {
+                    const li = document.createElement('li');
+                    li.style.display = 'contents';
+                    const b = document.createElement('button');
+                    b.type = 'button';
+                    b.className = 'j-step';
+                    b.setAttribute('role', 'tab');
+                    b.innerHTML = '<span class="j-dot"><span class="msi">' + s.icon + '</span></span><span class="j-lab">' + s.lab + '</span><span class="j-who">' + s.who + '</span>';
+                    b.addEventListener('click', () => { cur = i; render(); });
+                    li.appendChild(b);
+                    stepsWrap.appendChild(li);
+                });
+                prevBtn.addEventListener('click', () => { if (cur > 0) { cur--; render(); } });
+                nextBtn.addEventListener('click', () => { if (cur < stages.length - 1) { cur++; render(); } });
+                render();
+            }
+
+            // ===== FEATURE HUB =====
+            const hub = document.getElementById('platform-hub');
+            const tileGrid = document.getElementById('feature-tile-grid');
+            const featureDisplayContent = document.getElementById('feature-display-content');
+            if (hub && featureDisplayContent) {
+                const features = [
+                    // Inner ring: the core of Vetspeed's requirements
+                    { name: 'Waste documents', icon: 'description', desc: 'Hazardous Waste Consignment Notes and Waste Transfer Notes produced from what the driver records, on your own templates.', you: 'Both notes from one mixed visit, sent the moment the job closes.' },
+                    { name: 'Recurring rounds', icon: 'event_repeat', desc: 'Routes that repeat daily, weekly or on custom patterns, set to a vehicle or driver if you want.', you: 'Your fixed rounds, set once per site and day.' },
+                    { name: 'Group jobs', icon: 'account_tree', desc: 'Linked jobs that tie a run of collections to their final disposal.', you: 'A round&rsquo;s collections linked to the chamber they end up in.' },
+                    { name: 'Driver app', icon: 'phone_android', desc: 'Jobs, worksheets, scanning, photos and signatures on Android or iOS, online or offline.', you: 'Your ~100 drivers on the Android PDAs they carry now, subject to a model check.' },
+                    { name: 'Contracts &amp; rate cards', icon: 'request_quote', desc: 'Contracts with dated invoicing periods, plus price lists for each customer.', you: 'This year&rsquo;s rate card and next year&rsquo;s, side by side.' },
+                    { name: 'Stock &amp; consumables', icon: 'inventory_2', desc: 'Stock by location with movements, reorder alerts and stock lines on jobs.', you: 'Bin sales delivered and charged on the round.' },
+                    { name: 'Invoicing', icon: 'receipt_long', desc: 'Invoices built from completed jobs, individually, in batches or consolidated.', you: 'Practices billed at the right rate card, with no re-keying.' },
+                    { name: 'REST API &amp; webhooks', icon: 'api', desc: 'A documented REST API with scoped keys, outbound webhooks and inbound data feeds.', you: 'Weighbridges, No-Loss and Claris can all connect this way.' },
+                    // Middle ring
+                    { name: 'QR &amp; barcode scanning', icon: 'qr_code_scanner', desc: 'Scan questions in any worksheet, saved against the job and customer.', you: 'Every No-Loss bin logged against the practice it came from.' },
+                    { name: 'Worksheets', icon: 'checklist', desc: 'Digital forms with lists, weights, photos, signatures and conditional branching.', you: 'The Banksman split and incinerator records, built your way.' },
+                    { name: 'Parent &amp; child CRM', icon: 'corporate_fare', desc: 'Group contacts with sites underneath, inheriting terms, rates and credit limits.', you: 'IVC and 2,000+ practices, structured properly.' },
+                    { name: 'Finance exports', icon: 'sync_alt', desc: 'Export blueprints and scheduled exports with the columns you choose.', you: 'The daily Oracle posting.' },
+                    { name: 'Live tracking', icon: 'gps_fixed', desc: 'Real-time vehicle positions, journey history and ETAs on a single map.', you: 'Where every van on every round is, right now.' },
+                    { name: 'Geofences', icon: 'radar', desc: 'Boundaries around sites that log arrivals and departures automatically.', you: 'Proof of attendance on every contracted visit.' },
+                    { name: 'Vehicle checks', icon: 'fact_check', desc: 'Walk-round checks on the app, with defects and photos sent to the office.', you: 'A record for every van before it leaves the yard.' },
+                    { name: 'Fleet compliance', icon: 'car_repair', desc: 'MOT, tax, service and insurance dates against each vehicle, with alerts before anything lapses.', you: 'Nothing lapses across a fleet of about 100.' },
+                    { name: 'Returns &amp; reports', icon: 'summarize', desc: 'Hazardous waste returns, a full report suite and scheduled delivery by email.', you: 'Quarterly returns built from real job data.' },
+                    { name: 'BI dashboards', icon: 'monitoring', desc: 'Interactive dashboards for profitability, utilisation and time adherence, with drill-down.', you: 'Round-by-round margins for Vetspeed and Medisort.' },
+                    { name: 'Customer portal', icon: 'language', desc: 'Customers book work, track visits and download paperwork online.', you: 'Practices get their own notes without calling.' },
+                    { name: 'Roles &amp; security', icon: 'admin_panel_settings', desc: 'Roles, permissions, MFA, IP whitelisting and single sign-on.', you: '40 office users across 7 sites, each seeing what they should.' },
+                    // Outer ring: the rest of the platform
+                    { name: 'Scheduling assistant', icon: 'auto_awesome', desc: 'Suggests the best driver and slot for a new job, weighing skills, availability, travel time and cost.', you: 'Ad hoc collections slotted in around fixed rounds.' },
+                    { name: 'Route optimisation', icon: 'alt_route', desc: 'Reorders a day&rsquo;s stops into the shortest, cheapest route, or schedules a batch of jobs in one go.', you: 'Ready for when you move beyond fixed rounds.' },
+                    { name: 'Quotes &amp; e-signature', icon: 'draw', desc: 'Branded quotes that customers accept and sign online, then turn into jobs or invoices.', you: 'New practices signed up without paperwork going back and forth.' },
+                    { name: 'Sales pipeline', icon: 'filter_alt', desc: 'Opportunities tracked by stage, value and owner, with quotes attached.', you: 'One view of new business across Vetspeed and Medisort.' },
+                    { name: 'Purchase orders', icon: 'shopping_cart', desc: 'Purchase orders with spending limits, approvals and goods-in against stock.', you: 'Buying in bins and consumables with spend controls.' },
+                    { name: 'Card payments', icon: 'credit_card', desc: 'Card, Apple Pay and Google Pay through payment links, by phone or on site.', you: 'Faster payment from practices outside the IVC group.' },
+                    { name: 'Timesheets &amp; leave', icon: 'event_available', desc: 'Timesheets, absence requests and holiday allowances, shown on the schedule.', you: 'Cover planned across day and overnight rounds.' },
+                    { name: 'Skills &amp; tickets', icon: 'workspace_premium', desc: 'Qualifications with expiry dates, used so only the right people get the right jobs.', you: 'Only drivers with the right training sent on hazardous work.' },
+                    { name: 'Driver behaviour', icon: 'speed', desc: 'Scores for speeding, harsh braking and idling, with fleet safety reports.', you: 'Safer driving across a fleet carrying hazardous waste.' },
+                    { name: 'AI dashcams', icon: 'videocam', desc: 'Road and driver cameras that flag risky events, with footage on request.', you: 'Evidence on hand if an incident ever involves a hazardous load.' },
+                    { name: 'Messaging &amp; alerts', icon: 'notifications_active', desc: 'Office-to-driver messages, plus automatic alerts by email, SMS or in the app.', you: 'An alert if a round runs late or a vehicle check fails.' },
+                    { name: 'Automations', icon: 'settings_suggest', desc: 'Rules that create follow-on jobs, notes or messages when something happens.', you: 'A failed collection automatically raises a revisit.' },
+                    { name: 'Subcontractor network', icon: 'handshake', desc: 'Share jobs with other BigChange businesses and track them like your own.', you: 'Work passed to and from carriers who already use BigChange.' },
+                    { name: 'Assets &amp; PPM', icon: 'build', desc: 'Equipment registered at sites, with service agreements, schedules and history.', you: 'Planned maintenance for incinerators, weighbridges and yard kit.' },
+                    { name: 'Expenses', icon: 'receipt', desc: 'Drivers log expenses with receipts on the app, approved in the office.', you: 'Fuel and overnight costs logged from the road.' },
+                    { name: 'Manager app', icon: 'smartphone', desc: 'BigChange Express: the live map, jobs and daily figures on a phone.', you: 'Site managers keep an eye on their rounds from anywhere.' }
+                ];
+
+                const updateFeatureDisplay = (feature) => {
+                    featureDisplayContent.style.opacity = 0;
+                    setTimeout(() => {
+                        featureDisplayContent.innerHTML =
+                            '<div class="fd-head"><span class="msi">' + feature.icon + '</span><h3>' + feature.name + '</h3></div>' +
+                            '<p class="fd-desc">' + feature.desc + '</p>' +
+                            '<div class="fd-you"><span class="msi">check_circle</span><span>For Vetspeed: ' + feature.you + '</span></div>' +
+                            '<div class="fd-count">' + (features.indexOf(feature) + 1) + ' of ' + features.length + ' &middot; ' + (features.indexOf(feature) < 8 ? 'Core to your requirements' : features.indexOf(feature) < 20 ? 'Part of your set-up' : 'Also in the platform') + '</div>';
+                        featureDisplayContent.style.opacity = 1;
+                    }, 200);
+                };
+                const setActive = (nodes, node) => { nodes.forEach(n => n.classList.remove('active')); node.classList.add('active'); };
+
+                if (tileGrid) {
+                    features.forEach((feature, i) => {
+                        const t = document.createElement('button');
+                        t.type = 'button';
+                        t.className = 'feature-tile' + (i === 0 ? ' active' : '');
+                        t.innerHTML = '<span class="msi">' + feature.icon + '</span><span class="feature-name">' + feature.name + '</span>';
+                        t.addEventListener('click', () => { updateFeatureDisplay(feature); setActive(tileGrid.querySelectorAll('.feature-tile'), t); });
+                        tileGrid.appendChild(t);
+                    });
+                }
+
+                let activeIndex = 0;
+                let activeRing = 0;
+                const setRing = (r) => {
+                    activeRing = r;
+                    hub.dataset.focus = r;
+                    document.querySelectorAll('.ring-btn').forEach(b => { b.classList.toggle('active', +b.dataset.ring === r); b.setAttribute('aria-pressed', +b.dataset.ring === r ? 'true' : 'false'); });
+                };
+                document.querySelectorAll('.ring-btn').forEach(b => {
+                    b.addEventListener('click', () => {
+                        const r = +b.dataset.ring;
+                        const f = features[RINGS_START[r]];
+                        activeIndex = RINGS_START[r];
+                        updateFeatureDisplay(f);
+                        setActive(hub.querySelectorAll('.hub-node'), hub.querySelectorAll('.hub-node')[RINGS_START[r]] || hub.querySelector('.hub-node'));
+                        setRing(r);
+                    });
+                });
+                const RINGS_START = [0, 8, 20];
+                const RINGS = [[0, 8], [8, 20], [20, features.length]];
+                const buildHub = () => {
+                    hub.querySelectorAll('.hub-node, .hub-line').forEach(el => el.remove());
+                    const w = hub.offsetWidth;
+                    if (!w) return;
+                    const cx = w / 2, cy = hub.offsetHeight / 2;
+                    const base = Math.max(56, Math.min(70, w * 0.11));
+                    const sizes = [base * 1.14, base * 0.94, base * 0.8];
+                    const centreR = 55;
+                    const outerR = w / 2 - sizes[2] / 2 - 2;
+                    const innerR = centreR + sizes[0] / 2 + 6;
+                    const midR = (innerR + sizes[0] / 2 + outerR - sizes[2] / 2) / 2;
+                    const radii = [innerR, midR, outerR];
+                    hub.dataset.focus = activeRing;
+                    RINGS.forEach(([from, to], ringIdx) => {
+                        const list = features.slice(from, to);
+                        const step = (2 * Math.PI) / list.length;
+                        const offset = ringIdx % 2 ? step / 2 : 0;
+                        const nodeD = sizes[ringIdx];
+                        const nodeR = nodeD / 2;
+                        list.forEach((feature, i) => {
+                            const angle = (i * step) - (Math.PI / 2) + offset;
+                            const x = radii[ringIdx] * Math.cos(angle) + cx - nodeR;
+                            const y = radii[ringIdx] * Math.sin(angle) + cy - nodeR;
+                            const node = document.createElement('div');
+                            node.className = 'hub-node ring-' + ringIdx + (features.indexOf(feature) === activeIndex ? ' active' : '');
+                            node.dataset.ring = ringIdx;
+                            node.tabIndex = 0;
+                            node.setAttribute('role', 'button');
+                            node.setAttribute('aria-label', feature.name.replace(/&amp;/g, '&'));
+                            node.style.left = x + 'px';
+                            node.style.top = y + 'px';
+                            node.style.width = nodeD + 'px';
+                            node.style.height = nodeD + 'px';
+                            node.innerHTML = '<span class="msi">' + feature.icon + '</span><span class="feature-name">' + feature.name + '</span>';
+                            const activate = () => { activeIndex = features.indexOf(feature); updateFeatureDisplay(feature); setActive(hub.querySelectorAll('.hub-node'), node); setRing(ringIdx); };
+                            node.addEventListener('click', activate);
+                            node.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+                            const line = document.createElement('div');
+                            line.className = 'hub-line ring-' + ringIdx;
+                            const dist = Math.sqrt(Math.pow(x + nodeR - cx, 2) + Math.pow(y + nodeR - cy, 2));
+                            const rot = Math.atan2(y + nodeR - cy, x + nodeR - cx) * (180 / Math.PI);
+                            line.style.width = Math.max(dist - nodeR + 4, 0) + 'px';
+                            line.style.top = cy + 'px';
+                            line.style.left = cx + 'px';
+                            line.style.transform = 'rotate(' + rot + 'deg)';
+                            hub.appendChild(line);
+                            hub.appendChild(node);
+                        });
+                    });
+                };
+                buildHub();
+                let resizeTimer;
+                window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(buildHub, 200); });
+                updateFeatureDisplay(features[0]);
+            }
+
+            // ===== REVEAL + NAV =====
+            const revealEls = Array.from(document.querySelectorAll('.section-title, .edge-band, .pressure-grid, .imap, .imap-heads, .retire-strip, .contents, .brief-band, .ai-box, .scale-band, .cs-grid, .proof-tiles, .yard-note, .fit-summary, .fit-table, .journey, .features-layout, .inventory, .talk-card'));
+            revealEls.forEach(el => el.classList.add('reveal'));
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, i) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => entry.target.classList.add('visible'), Math.min(i, 4) * 70);
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.06 });
+                revealEls.forEach(el => io.observe(el));
+                setTimeout(() => revealEls.forEach(el => el.classList.add('visible')), 2500);
+            } else {
+                revealEls.forEach(el => el.classList.add('visible'));
+            }
+
+            const nav = document.getElementById('sticky-nav');
+            if (nav) {
+                const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+                window.addEventListener('scroll', onScroll, { passive: true });
+                onScroll();
+            }
+        });
+    </script>
+</body>
+</html>
